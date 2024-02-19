@@ -1,5 +1,3 @@
-# TETI Ask - Senior Project DTETI
-
 ## **Kelompok Numero Uno**
 
 **Ketua Kelompok:** Agustinus Angelo Christian Fernando - 21/473804/TK/52235
