@@ -1,6 +1,6 @@
 # TETI Ask - Senior Project DTETI
 
-## Kelompok Numero Uno
+## **Kelompok Numero Uno**
 
 **Ketua Kelompok:** Agustinus Angelo Christian Fernando - 21/473804/TK/52235
 
@@ -12,31 +12,32 @@
 
 **Instansi:** DTETI FT UGM Yogyakarta
 
-## Tentang Project
-**Produk:** TETI Ask 
-
-TETI Ask adalah chatbot yang dapat menjawab semua pertanyaan Anda terkait DTETI FT UGM. 
-
-Mahasiswa bisa bertanya apapun tentang DTETI menggunakan bahasa sehari-hari dengan sangat mudah dan cepat untuk mendapatkan jawabannya. Hal ini tentunya dapat menghemat waktu mahasiswa dalam mencari suatu informasi yang dibutuhkan.
-
-TETI Ask berwujud web berbasis chatbot. Model AI Chatbot akan memanfaatkan cloud, yaitu Azure OpenAI. Jaringan komputer akan dimanfaatkan ketika melakukan deploy web app ini.
+## **Nama dan Jenis Produk**
+**Nama Produk:** TETI Ask 
 
 **Jenis produk:** Web Based Chatbot
 
-**Latar Belakang & Permasalahan** 
+## **Latar Belakang & Permasalahan** 
 
 Mahasiswa masih seringkali bingung mengenai di mana harus mengakses suatu informasi terkait perkuliahan di DTETI. Sumber informasi yang tersedia pun masih terpisah-pisah. Bingungnya mencari suatu informasi tentunya menyebabkan waktu terbuang sia-sia sehingga menjadi hal yang tidak efektif.
 
 Oleh karena itu, kami ingin membuat suatu web app yang menerapkan chatbot agar mahasiswa bisa bertanya suatu hal tentang TETI menggunakan bahasa sehari-hari dengan sangat mudah dan cepat untuk mendapatkan jawabannya. Hal ini tentunya dapat menghemat waktu mahasiswa dalam mencari suatu informasi yang dibutuhkan.
 
-**Rumusan Permasalahan**
+## **Rumusan Permasalahan**
 - Bagaimana mahasiswa bisa mendapatkan informasi seputar DTETI dengan cepat dan sesuai kebutuhan?
 
 - Bagaimana mahasiswa dapat mengakses informasi seputar DTETI di mana pun tanpa ada harus menginstall software tertentu?
 
 - Bagaimana mahasiswa bisa mendapatkan informasi seputar DTETI kapan pun di luar jam kerja?
 
-**Fitur**
+## **Penjelasan Solusi Produk**
+TETI Ask adalah chatbot yang dapat menjawab semua pertanyaan Anda terkait DTETI FT UGM. 
+
+Mahasiswa bisa bertanya apapun tentang DTETI menggunakan bahasa sehari-hari dengan sangat mudah dan cepat untuk mendapatkan jawabannya. Hal ini tentunya dapat menghemat waktu mahasiswa dalam mencari suatu informasi yang dibutuhkan.
+
+TETI Ask berwujud web berbasis chatbot. Model AI Chatbot akan memanfaatkan cloud, yaitu Azure OpenAI. Jaringan komputer akan dimanfaatkan ketika melakukan deploy web app ini.
+
+## **Fitur**
 - **Chatbot:** Berisi semua knowledge yang berkaitan dengan informasi perkuliahan yang dibutuhkan oleh mahasiswa DTETI.
 - **FAQ DTETI:** Berisikan hal-hal seputar DTETI yang paling sering ditanyakan oleh mahasiswa.
 - **Histori pertanyaan:** Mahasiswa dapat menagkses kembali chat yang sebelumnya pernah user lakukan dengan chatbot ini.
