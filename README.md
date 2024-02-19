@@ -5,9 +5,9 @@ TETI Ask adalah chatbot yang dapat menjawab semua pertanyaan Anda terkait DTETI 
 
 Kelompok Numero Uno
 
-Ketua Kelompok: 
+Ketua Kelompok: Agustinus Angelo Christian Fernando - 21/473804/TK/52235
 
-Anggota 1:
+Anggota 1: Agustinus Angelo Christian Fernando - 21/473804/TK/52235
 
 Anggota 2:
 
