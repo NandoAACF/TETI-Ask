@@ -10,6 +10,8 @@
 
 **Anggota 3:** Nikolas Galih Saputro Anugrah Utomo - 21/482747/TK/53361
 
+# **Modul 1**
+
 **Instansi:** DTETI FT UGM Yogyakarta
 
 ## **Nama dan Jenis Produk**
@@ -33,14 +35,15 @@ Oleh karena itu, kami ingin membuat suatu web app yang menerapkan chatbot agar m
 ## **Penjelasan Solusi Produk**
 TETI Ask adalah chatbot yang dapat menjawab semua pertanyaan Anda terkait DTETI FT UGM. 
 
-Mahasiswa bisa bertanya apapun tentang DTETI menggunakan bahasa sehari-hari dengan sangat mudah dan cepat untuk mendapatkan jawabannya. Hal ini tentunya dapat menghemat waktu mahasiswa dalam mencari suatu informasi yang dibutuhkan.
+Mahasiswa bisa bertanya apapun tentang DTETI menggunakan bahasa sehari-hari dengan sangat mudah dan cepat untuk mendapatkan jawabannya. Selain chatbot, kita juga akan membuat web yang berisi FAQ, dokumen, dan hal-hal penting terkait DTETI. Hal ini tentunya dapat menghemat waktu mahasiswa dalam mencari suatu informasi yang dibutuhkan.
 
 TETI Ask berwujud web berbasis chatbot. Model AI Chatbot akan memanfaatkan cloud, yaitu Azure OpenAI. Jaringan komputer akan dimanfaatkan ketika melakukan deploy web app ini.
 
 ## **Fitur**
-- **Chatbot:** Berisi semua knowledge yang berkaitan dengan informasi perkuliahan yang dibutuhkan oleh mahasiswa DTETI.
+- **Chatbot:** Dapat menjawab semua pertanyaan pengguna yang berkaitan dengan informasi seputar DTETI FT UGM secara akurat dan cepat.
 - **FAQ DTETI:** Berisikan hal-hal seputar DTETI yang paling sering ditanyakan oleh mahasiswa.
-- **Histori pertanyaan:** Mahasiswa dapat menagkses kembali chat yang sebelumnya pernah user lakukan dengan chatbot ini.
+- **Histori pertanyaan:** Mahasiswa dapat mengakses chat yang sebelumnya pernah user lakukan dengan chatbot ini.
+- **Dokumen Penting:** Berisikan daftar dokumen-dokumen penting yang dibutuhkan oleh mahasiswa DTETI.
 
 ## **Analisis Kompetitor**
 - **AILABOT**
@@ -85,5 +88,41 @@ TETI Ask berwujud web berbasis chatbot. Model AI Chatbot akan memanfaatkan cloud
       - Lebih interaktif dan tidak bergantung pada web Sarjana DTETI sehingga performanya pun bisa lebih baik
 
 
+# **Modul 2**
 
+## **Metodologi SDLC**
 
+**Metodologi yang digunakan:** Agile
+
+## **Alasan pemilihan Agile**
+
+Kami memilih metode agile karena iterasi berlangsung dengan cepat sehingga kita bisa mengembangkan fungsionalitas chatbot dengan kualitas yang semakin baik dari waktu ke waktu. 
+
+Selain itu, agile fleksibel terhadap perubahan. Dengan begitu, maka tim memiliki kemampuan untuk menyesuaikan fungsionalitas chatbot sesuai dengan kebutuhan para pengguna dengan cepat dan tidak harus mengulang semuanya dari awal.
+
+Pengembangan pada metode agile dilakukan secara bertahap. Hal ini menyebabkan kita bisa merilis fungsionalitas sedikit demi sedikit sehingga jika ada bug bisa masih mudah untuk diatasi.
+
+Kualitas produk juga akan jauh lebih baik karena produk akan terus disempurnakan pada setiap siklus pengembangan sesuai dengan hasil testing dan feedback yang didapatkan.
+
+## **Tujuan Produk**
+Membuat chatbot yang dapat menjawab semua pertanyaan Anda terkait DTETI FT UGM. Mahasiswa, dosen, dan tendik bisa bertanya apapun tentang DTETI menggunakan bahasa sehari-hari dengan sangat mudah dan cepat untuk mendapatkan jawabannya. Selain chatbot, kita juga akan membuat web yang berisi FAQ, dokumen, dan hal-hal penting terkait DTETI. 
+
+Hal ini tentunya dapat menghemat waktu mahasiswa dalam mencari suatu informasi yang dibutuhkan. Tidak hanya chatbot, tapi kami juga menyediakan sebuah web yang menyediakan segala informasi terkait DTETI.
+
+## **Pengguna potensial**
+Mahasiswa, dosen, dan tenaga pendidik di DTETI FT UGM yang sedang membutuhkan suatu informasi terkait DTETI.
+
+## **Use Case Diagram**
+![Use Case Diagram](images/usecase.png)
+
+## **Functional Requirements**
+![FR Table](images/fr.png)
+
+## **Entity Relationship Diagram**
+![ERD](images/erd.png)
+
+## **Low Fidelity Wireframe**
+![Low Fidelity Wireframe](images/lofi.png)
+
+## **Gantt-Chart**
+![Gantt Chart](images/gantt.png)
