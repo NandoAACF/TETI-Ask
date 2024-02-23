@@ -46,47 +46,67 @@ TETI Ask berwujud web berbasis chatbot. Model AI Chatbot akan memanfaatkan cloud
 - **Dokumen Penting:** Berisikan daftar dokumen-dokumen penting yang dibutuhkan oleh mahasiswa DTETI.
 
 ## **Analisis Kompetitor**
-- **AILABOT**
-  - **Jenis kompetitor:** Direct
-  - **Jenis produk:** Aplikasi chatbot
-  - **Target customer:** Mahasiswa UNILAK
-  - **Kelebihan**
-    - Berisi informasi yang lengkap terkait kampus, mulai dari alamat hingga bagaimana cara mendaftar di kampus tersebut.
-    - Dapat memberikan akses yang cepat untuk mahasiswa mendapatkan informasi terkait kampus
-  - **Kekurangan**
-    - Memerlukan sumber daya hardware yang mumpuni karena berjalan di local
-    - Masih berjalan local sehingga diperlukan proses instalasi
-  - **Key Competitive:** Kunci kompetisi dari projek kami adalah berbasis web sehingga pengguna bisa memiliki kelonggaran dalam memilih gawai yang digunakan untuk mengakses projek kami tanpa harus takut adanya hambatan sumber daya hardware dan tidak perlu repot untuk menginstall aplikasi tambahan.
+### **Kompetitor 1: AILABOT**
 
-- **Chatbot Lintang UGM**
-  - **Jenis kompetitor:** Tertiary Competitors
-  - **Jenis produk:** Web App
-  - **Target customer:** Mahasiswa UGM
-  - **Kelebihan**
-    - Ada emoji sehingga lebih interaktif
-    - Cukup simpel
-  - **Kekurangan**
-    - Masih belum akurat
-    - Jawaban kadang tidak sesuai dengan pertanyaan
-    - UI masih kurang bagus
-  - **Key Competitive:**
-    - Chatbot yang kita buat bisa lebih akurat karena menggunakan layanan cloud Azure OpenAI yang sudah dilatih sedemikian rupa oleh Microsoft.
-    - Design UI yang kita buat bisa lebih modern dan intuitif sehingga lebih nyaman digunakan oleh pengguna.
+| **Nama Kompetitor** | AILABOT |
+| --- | --- |
+| **Jenis Kompetitor** | Direct |
+| **Jenis Produk** | Aplikasi Chatbot |
+| **Target Customer** | Mahasiswa UNILAK |
 
-- **Chatbot LUIS**
-    - **Jenis Kompetitor:** Direct
-    - **Jenis produk:** Embed pada web Sarjana DTETI
-    - **Target customer:** Mahasiswa DTETI
-    - **Kelebihan**
-      - Mudah diakses karena langsung di web Sarjana DTETI
-    - **Kekurangan**
-      - Sudah tidak bisa digunakan
-      - Kurang interaktif
-      - Loading cukup lama
-    - **Key Competitive:**
-      - Pemrosesan pertanyaan bisa lebih cepat dan loading tidak memakan banyak waktu
-      - Lebih interaktif dan tidak bergantung pada web Sarjana DTETI sehingga performanya pun bisa lebih baik
+| **Kelebihan** | **Kekurangan** |
+| --- | --- |
+| Berisi informasi yang lengkap terkait kampus, mulai dari alamat hingga bagaimana cara mendaftar di kampus tersebut. | Memerlukan sumber daya hardware yang mumpuni karena berjalan di local |
+| Dapat memberikan akses yang cepat untuk mahasiswa mendapatkan informasi terkait kampus | Masih berjalan local sehingga diperlukan proses instalasi |
 
+| **Key Competitive Advantage & Unique Value** |
+| --- |
+| Kunci kompetisi dari projek kami adalah berbasis web sehingga pengguna bisa memiliki kelonggaran dalam memilih gawai yang digunakan untuk mengakses projek kami tanpa harus takut adanya hambatan sumber daya hardware dan tidak perlu repot untuk menginstall aplikasi tambahan. |
+
+### **Kompetitor 2: Chatbot Lintang UGM**
+
+| **Nama Kompetitor** | Chatbot Lintang UGM |
+| --- | --- |
+| **Jenis Kompetitor** | Tertiary Competitors |
+| **Jenis Produk** | Web App |
+| **Target Customer** | Mahasiswa UGM |
+
+| **Kelebihan** | **Kekurangan** |
+| --- | --- |
+| Ada emoji sehingga lebih interaktif | Masih belum akurat |
+| Cukup simpel | Jawaban kadang tidak sesuai dengan pertanyaan |
+| - | UI masih kurang bagus |
+
+| **Key Competitive Advantage & Unique Value** |
+| --- |
+| Chatbot yang kita buat bisa lebih akurat karena menggunakan layanan cloud Azure OpenAI yang sudah dilatih sedemikian rupa oleh Microsoft. |
+| Design UI yang kita buat bisa lebih modern dan intuitif sehingga lebih nyaman digunakan oleh pengguna. |
+
+### **Kompetitor 3: Chatbot LUIS**
+
+| **Nama Kompetitor** | Chatbot LUIS |
+| --- | --- |
+| **Jenis Kompetitor** | Direct |
+| **Jenis Produk** | Embed pada web Sarjana DTETI |
+| **Target Customer** | Mahasiswa DTETI |
+
+| **Kelebihan** | **Kekurangan** |
+| --- | --- |
+| Mudah diakses karena langsung embed di web Sarjana DTETI | Sudah tidak bisa digunakan |
+| - | Kurang interaktif |
+| - | Loading cukup lama |
+
+| **Key Competitive Advantage & Unique Value** |
+| --- |
+| Pemrosesan pertanyaan bisa lebih cepat dan loading tidak memakan banyak waktu |
+| Lebih interaktif dan tidak bergantung pada web Sarjana DTETI sehingga performanya pun bisa lebih baik |
+
+## **Referensi**
+- eric-urban. (n.d.). Azure OpenAI Service - Documentation, quickstarts, API reference - Azure AI services. Learn.microsoft.com. https://learn.microsoft.com/en-us/azure/ai-services/openai/
+- Pengembangan chatbot untuk melayani pertanyaan akademik mahasiswa – Cloud Experience Research Group. (n.d.). Cloud Experience Research Group Dept. Electrical & Information Engineering Faculty of Engineering Universitas Gadjah Mada. Retrieved February 12, 2024, from https://cloudex.wg.ugm.ac.id/2019/06/25/pengembangan-chatbot-untuk-melayani-pertanyaan-akademik-mahasiswa/
+- id | Program Sarjana - Departemen Teknik Elektro dan Teknologi Informasi. (n.d.). Sarjana.jteti.ugm.ac.id. Retrieved February 12, 2024, from https://sarjana.jteti.ugm.ac.id/# 
+
+<br>
 
 # **Modul 2**
 
@@ -113,13 +133,13 @@ Hal ini tentunya dapat menghemat waktu mahasiswa dalam mencari suatu informasi y
 Mahasiswa, dosen, dan tenaga pendidik di DTETI FT UGM yang sedang membutuhkan suatu informasi terkait DTETI.
 
 ## **Use Case Diagram**
-![Use Case Diagram](images/usecase.png)
+![Use Case Diagram](images/usecase_senpro.png)
 
 ## **Functional Requirements**
-![FR Table](images/fr.png)
+![FR Table](images/functional.png)
 
 ## **Entity Relationship Diagram**
-![ERD](images/erd.png)
+![ERD](images/erd_senpro.png)
 
 ## **Low Fidelity Wireframe**
 ![Low Fidelity Wireframe](images/lofi.png)
