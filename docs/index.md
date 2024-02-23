@@ -54,10 +54,14 @@ TETI Ask berwujud web berbasis chatbot. Model AI Chatbot akan memanfaatkan cloud
 | **Jenis Produk** | Aplikasi Chatbot |
 | **Target Customer** | Mahasiswa UNILAK |
 
+<br>
+
 | **Kelebihan** | **Kekurangan** |
 | --- | --- |
 | Berisi informasi yang lengkap terkait kampus, mulai dari alamat hingga bagaimana cara mendaftar di kampus tersebut. | Memerlukan sumber daya hardware yang mumpuni karena berjalan di local |
 | Dapat memberikan akses yang cepat untuk mahasiswa mendapatkan informasi terkait kampus | Masih berjalan local sehingga diperlukan proses instalasi |
+
+<br>
 
 | **Key Competitive Advantage & Unique Value** |
 | --- |
@@ -71,11 +75,15 @@ TETI Ask berwujud web berbasis chatbot. Model AI Chatbot akan memanfaatkan cloud
 | **Jenis Produk** | Web App |
 | **Target Customer** | Mahasiswa UGM |
 
+<br>
+
 | **Kelebihan** | **Kekurangan** |
 | --- | --- |
 | Ada emoji sehingga lebih interaktif | Masih belum akurat |
 | Cukup simpel | Jawaban kadang tidak sesuai dengan pertanyaan |
-| - | UI masih kurang bagus |
+| Sudah terbilang intuitif | UI masih kurang bagus |
+
+<br>
 
 | **Key Competitive Advantage & Unique Value** |
 | --- |
@@ -90,11 +98,15 @@ TETI Ask berwujud web berbasis chatbot. Model AI Chatbot akan memanfaatkan cloud
 | **Jenis Produk** | Embed pada web Sarjana DTETI |
 | **Target Customer** | Mahasiswa DTETI |
 
+<br>
+
 | **Kelebihan** | **Kekurangan** |
 | --- | --- |
-| Mudah diakses karena langsung embed di web Sarjana DTETI | Sudah tidak bisa digunakan |
-| - | Kurang interaktif |
-| - | Loading cukup lama |
+| Mudah diakses karena langsung embed di web Sarjana DTETI | Sering tidak bisa digunakan |
+| Simpel karena tidak perlu membuka page baru | Kurang interaktif |
+| UI cukup simpel | Loading cukup lama |
+
+<br>
 
 | **Key Competitive Advantage & Unique Value** |
 | --- |
@@ -104,7 +116,7 @@ TETI Ask berwujud web berbasis chatbot. Model AI Chatbot akan memanfaatkan cloud
 ## **Referensi**
 - eric-urban. (n.d.). Azure OpenAI Service - Documentation, quickstarts, API reference - Azure AI services. Learn.microsoft.com. https://learn.microsoft.com/en-us/azure/ai-services/openai/
 - Pengembangan chatbot untuk melayani pertanyaan akademik mahasiswa – Cloud Experience Research Group. (n.d.). Cloud Experience Research Group Dept. Electrical & Information Engineering Faculty of Engineering Universitas Gadjah Mada. Retrieved February 12, 2024, from https://cloudex.wg.ugm.ac.id/2019/06/25/pengembangan-chatbot-untuk-melayani-pertanyaan-akademik-mahasiswa/
-- id | Program Sarjana - Departemen Teknik Elektro dan Teknologi Informasi. (n.d.). Sarjana.jteti.ugm.ac.id. Retrieved February 12, 2024, from https://sarjana.jteti.ugm.ac.id/# 
+- Program Sarjana - Departemen Teknik Elektro dan Teknologi Informasi. (n.d.). Sarjana.jteti.ugm.ac.id. Retrieved February 12, 2024, from https://sarjana.jteti.ugm.ac.id/# 
 
 <br>
 
