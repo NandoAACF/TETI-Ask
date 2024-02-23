@@ -113,11 +113,6 @@ TETI Ask berwujud web berbasis chatbot. Model AI Chatbot akan memanfaatkan cloud
 | Pemrosesan pertanyaan bisa lebih cepat dan loading tidak memakan banyak waktu |
 | Lebih interaktif dan tidak bergantung pada web Sarjana DTETI sehingga performanya pun bisa lebih baik |
 
-## **Referensi**
-- eric-urban. (n.d.). Azure OpenAI Service - Documentation, quickstarts, API reference - Azure AI services. Learn.microsoft.com. https://learn.microsoft.com/en-us/azure/ai-services/openai/
-- Pengembangan chatbot untuk melayani pertanyaan akademik mahasiswa – Cloud Experience Research Group. (n.d.). Cloud Experience Research Group Dept. Electrical & Information Engineering Faculty of Engineering Universitas Gadjah Mada. Retrieved February 12, 2024, from https://cloudex.wg.ugm.ac.id/2019/06/25/pengembangan-chatbot-untuk-melayani-pertanyaan-akademik-mahasiswa/
-- Program Sarjana - Departemen Teknik Elektro dan Teknologi Informasi. (n.d.). Sarjana.jteti.ugm.ac.id. Retrieved February 12, 2024, from https://sarjana.jteti.ugm.ac.id/# 
-
 <br>
 
 # **Modul 2**
@@ -158,3 +153,8 @@ Mahasiswa, dosen, dan tenaga pendidik di DTETI FT UGM yang sedang membutuhkan su
 
 ## **Gantt-Chart**
 ![Gantt Chart](images/gantt.png)
+
+## **Referensi**
+- eric-urban. (n.d.). Azure OpenAI Service - Documentation, quickstarts, API reference - Azure AI services. Learn.microsoft.com. https://learn.microsoft.com/en-us/azure/ai-services/openai/
+- Pengembangan chatbot untuk melayani pertanyaan akademik mahasiswa – Cloud Experience Research Group. (n.d.). Cloud Experience Research Group Dept. Electrical & Information Engineering Faculty of Engineering Universitas Gadjah Mada. Retrieved February 12, 2024, from https://cloudex.wg.ugm.ac.id/2019/06/25/pengembangan-chatbot-untuk-melayani-pertanyaan-akademik-mahasiswa/
+- Program Sarjana - Departemen Teknik Elektro dan Teknologi Informasi. (n.d.). Sarjana.jteti.ugm.ac.id. Retrieved February 12, 2024, from https://sarjana.jteti.ugm.ac.id/# 
