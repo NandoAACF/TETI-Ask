@@ -149,7 +149,17 @@ Mahasiswa, dosen, dan tenaga pendidik di DTETI FT UGM yang sedang membutuhkan su
 ![ERD](images/erd_senpro.png)
 
 ## **Low Fidelity Wireframe**
-![Low Fidelity Wireframe](images/lofi.png)
+**Landing Page**
+![Low Fidelity Wireframe](images/lofi1.png)
+**Chatbot Page**
+![Low Fidelity Wireframe](images/lofi2.png)
+**Highlight Page**
+![Low Fidelity Wireframe](images/lofi3.png)
+**FAQ Page**
+![Low Fidelity Wireframe](images/lofi4.png)
+**Document Page**
+![Low Fidelity Wireframe](images/lofi5.png)
+
 
 ## **Gantt-Chart**
 ![Gantt Chart](images/gantt.png)
