@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, send_file
+from flask import Flask, request, jsonify
 from flask_pymongo import pymongo
 from bson.json_util import dumps
 from bson.objectid import ObjectId
@@ -61,8 +61,6 @@ def documents_verified():
 @app.route('/document/verify/<id>', methods=['PUT'])
 def verify_document(id):
     _id = id
-    _json = request.json
-
     if _id and request.method == 'PUT':
         col_documents.update_one({'_id': ObjectId(_id)}, {'$set': {'status': "verified"}})
         resp = jsonify('Document verified successfully!')
