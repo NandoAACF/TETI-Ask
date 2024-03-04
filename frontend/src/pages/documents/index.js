@@ -10,7 +10,7 @@ export default function Document() {
     };
     return (
         <>
-            <div className="flex flex-col justify-start min-h-screen bg-slate-50 py-[30px] px-[50px] body">
+            <div className="flex flex-col justify-start min-h-screen bg-slate-50 py-[30px] px-[27px] sm:px-[50px] body">
                 <h3 className="text-[40px] font-bold text-left">Documents</h3>
                 <div className="flex flex-row items-center justify-start mt-[20px] gap-[15px]">
                     <h4 className="text-[17px] font-medium text-left">Category:</h4>

@@ -5,9 +5,9 @@ export default function CardDocument({
     link = "https://docs.google.com/document/d/1uyeYHZDYmIRauOLuYesSFHFc-BqG7iA7gn4t7qnmuhk/edit?usp=sharing",
 }) {
     return (
-        <div className="flex flex-col items-center justify-between w-[280px] min-h-[170px] pb-[20px] bg-white rounded-[10px] shadow-md relative">
+        <div className="flex flex-col items-center justify-between max-w-[280px] min-h-[170px] pb-[20px] bg-white rounded-[10px] shadow-md relative">
             <div className="flex flex-col items-start justify-start w-full">
-                <div className="w-[280px] h-[30px] rounded-t-[10px] bg-orange-600"></div>
+                <div className="w-full h-[30px] rounded-t-[10px] bg-orange-600"></div>
                 <div className="flex flex-col items-start justify-start w-full px-[13px] mt-[10px]">
                     <h4 className="text-[20px] font-semibold text-black ">{title}</h4>
                     <div className="flex flex-col items-start justify-start w-full mt-[8px] gap-[8px] flex-wrap">
