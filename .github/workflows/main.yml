@@ -3,6 +3,8 @@ name: Test and Build TETI Ask
 on:
     push:
         branches: [main]
+        paths:
+            - "frontend/**"
 
 jobs:
     test-build:
