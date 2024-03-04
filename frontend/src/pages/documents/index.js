@@ -72,7 +72,7 @@ export default function Document() {
                 </div>
             </div>
             <div
-                className="fixed right-[50px] bottom-[40px] text-[60px] sm:text-[90px] text-black hover:text-[#396688] active:text-[#223e53] transition-all ease-in-out duration-200 cursor-pointer hover:scale-110"
+                className="fixed right-[50px] bottom-[40px] text-[60px] sm:text-[90px] text-black hover:text-blue-800 active:text-blue-900 transition-all ease-in-out duration-200 cursor-pointer hover:scale-110"
                 onClick={() => {
                     setModal(true);
                 }}
