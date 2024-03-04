@@ -17,4 +17,5 @@ jobs:
               with:
                   node-version: "18"
             - run: npm i
+              working-directory: frontend
             - run: npm run build
