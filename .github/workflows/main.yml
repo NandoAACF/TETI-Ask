@@ -2,7 +2,8 @@ name: Test and Build TETI Ask
 
 on:
     push:
-        branches: [main]
+        branches:
+            - main
         paths:
             - "frontend/**"
 
@@ -19,7 +20,6 @@ jobs:
             - name: Test and Build
               uses: actions/setup-node@v2
               with:
-                  node-version: ${{ matrix.node-version }}
-                  cache: "npm"
+                  node-version: "18"
             - run: npm i
             - run: npm run build
