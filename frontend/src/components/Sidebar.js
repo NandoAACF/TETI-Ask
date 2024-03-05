@@ -4,6 +4,8 @@ import { CgNotes, CgProfile } from "react-icons/cg";
 import { TbLogout2 } from "react-icons/tb";
 import { TbMessageChatbot } from "react-icons/tb";
 import { FaRobot } from "react-icons/fa";
+import { FaQuestion } from "react-icons/fa";
+import { MdQuestionMark } from "react-icons/md";
 import clsx from "clsx";
 
 export default function Sidebar({ activeIcon }) {
@@ -30,6 +32,14 @@ export default function Sidebar({ activeIcon }) {
                         ${activeIcon === "documents" ? "bg-red-900" : "hover:bg-red-800 active:bg-red-800"}`}
                         >
                             <CgNotes color="white" />
+                        </div>
+                    </Link>
+                    <Link href="/faq">
+                        <div
+                            className={`text-[24px] sm:text-[30px] transition-all ease-in-out duration-200 hover:scale-110 rounded-lg p-[8px] sm:p-[15px] cursor-pointer
+                        ${activeIcon === "faq" ? "bg-red-900" : "hover:bg-red-800 active:bg-red-800"}`}
+                        >
+                            <MdQuestionMark color="white" />
                         </div>
                     </Link>
                     <Link href="/admin-dashboard">
