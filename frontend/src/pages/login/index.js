@@ -30,7 +30,7 @@ export default function Login() {
                     <Button text="Login" type="login" size="md" className="w-full mt-[30px] lg:mt-[40px]" />
                 </form>
                 <h3 className="text-[17px] sm:text-[19px] text-center mt-[30px] mx-[20px] sm:mx-0">
-                    Don't have an account?{" "}
+                    Don&apos;t have an account?{" "}
                     <span
                         onClick={() => router.push("/register")}
                         className="underline cursor-pointer text-[#c92929] hover:text-[#ab2424]"
