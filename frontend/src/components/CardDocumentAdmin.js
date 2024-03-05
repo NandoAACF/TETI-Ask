@@ -1,4 +1,4 @@
-export default function CardDocument({
+export default function CardDocumentAdmin({
     title = "Buku Panduan",
     category = "Akademik",
     description = "Dokumen ini berisi panduan untuk kegiatan akademik",
@@ -7,7 +7,7 @@ export default function CardDocument({
     return (
         <div className="flex flex-col items-center justify-between max-w-[280px] min-h-[170px] pb-[20px] bg-white rounded-[10px] shadow-md relative">
             <div className="flex flex-col items-start justify-start w-full">
-                <div className="w-full h-[30px] rounded-t-[10px] bg-orange-600"></div>
+                <div className="w-full h-[30px] rounded-t-[10px] bg-red-600"></div>
                 <div className="flex flex-col items-start justify-start w-full px-[13px] mt-[10px]">
                     <h4 className="text-[20px] font-semibold text-black ">{title}</h4>
                     <div className="flex flex-col items-start justify-start w-full mt-[8px] gap-[8px] flex-wrap">
@@ -17,14 +17,22 @@ export default function CardDocument({
                     </div>
                     <h5 className="text-[14px] font-normal text-black mt-[10px]">{description}</h5>
                 </div>
-                <div className="flex flex-col items-start justify-start w-full px-[13px]">
+                <div className="flex flex-col items-start justify-start w-full px-[13px] gap-[4px]">
                     <a
-                        className="w-full px-[10px] py-[5px] rounded-lg bg-blue-600 text-white mt-[10px] hover:bg-blue-800 active:bg-blue-900 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-[#2471AB]/[29%]"
+                        className="w-full px-[10px] py-[5px] rounded-lg bg-green-600 text-white mt-[10px] hover:bg-green-800 active:bg-green-900 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-[#2471AB]/[29%]"
                         href={link}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Open Document
+                        Verify Document
+                    </a>
+                    <a
+                        className="w-full px-[10px] py-[5px] rounded-lg bg-red-600 text-white mt-[10px] hover:bg-red-700 active:bg-red-800 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-[#2471AB]/[29%]"
+                        href={link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Reject Document
                     </a>
                 </div>
             </div>
