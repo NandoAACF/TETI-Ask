@@ -28,6 +28,22 @@ export default function CardDocument({
                     >
                         Open Document
                     </a>
+                    {/* <a
+                        className="w-full px-[10px] py-[5px] rounded-lg bg-green-600 text-white mt-[11px] hover:bg-green-700 active:bg-green-800 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-green-700/[29%]"
+                        href={link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Edit Document
+                    </a>
+                    <a
+                        className="w-full px-[10px] py-[5px] rounded-lg bg-red-600 text-white mt-[11px] hover:bg-red-700 active:bg-red-800 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-red-700/[29%]"
+                        href={link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Delete Document
+                    </a> */}
                 </div>
             </div>
         </div>
