@@ -27,6 +27,8 @@ export default function Button({
     const btnColor = useMemo(() => {
         if (type === "primary")
             return `text-white bg-[#2984C9] hover:bg-[#2471AB] active:bg-[#1A5481] hover:shadow-lg hover:shadow-[#2471AB]/[29%] hover:-translate-y-[6px]`;
+        if (type === "login")
+            return `text-white bg-red-600 hover:bg-700 active:bg-800 hover:shadow-lg hover:shadow-red-700/[29%] hover:-translate-y-[6px]`;
         if (type === "secondary")
             return `text-black bg-transparant hover:text-white hover:bg-[#2471AB] active:bg-[#1A5481] hover:shadow-lg hover:shadow-[#2471AB]/[29%] hover:-translate-y-[6px]`;
         if (type == "resetpassword")
