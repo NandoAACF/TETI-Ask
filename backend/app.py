@@ -3,13 +3,19 @@ from flask_pymongo import pymongo
 from bson.json_util import dumps
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask_cors import CORS
+from dotenv import load_dotenv
 import os
+
+load_dotenv()
 
 app = Flask(__name__)
 
+CORS(app)
+
 app.config['MONGO_URI'] = 'mongodb://localhost:27017/TETI-Ask'
 
-client = pymongo.MongoClient("mongodb://localhost:27017/")
+client = pymongo.MongoClient(os.getenv("MONGO_URI", "mongodb://localhost:27017/") )
 db = client["TETI-Ask"]
 col_documents = db["Documents"]
 col_users = db["Users"]
