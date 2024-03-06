@@ -2,13 +2,13 @@ import { useEffect, useState } from "react"
 
 export const API_URL = "http://localhost:5000"
 
-export const useGetDocument = () => {
-    const [docs, setDocs] = useState([]);
+export const useGetFaqs = () => {
+    const [faqs, setFaqs] = useState([]);
     useEffect(()=>{
-        fetch(API_URL + "/documents")
+        fetch(API_URL + "/faqs")
         .then(res => res.json())
-        .then(data => setDocs(data))
+        .then(data => setFaqs(data))
         .catch(console.log);
     }, [])
-    return docs
+    return faqs
 }

@@ -6,9 +6,11 @@ import Sidebar from "@/components/Sidebar";
 import { IoIosArrowDown } from "react-icons/io";
 import FAQItem from "@/components/FAQItem";
 import ModalFAQ from "@/components/ModalFAQ";
+import { useGetFaqs } from "@/services/faqs";
 
 export default function FAQ() {
     const [modal, setModal] = useState(false);
+    const faqs = useGetFaqs();
     const handleExit = () => {
         setModal(false);
     };
@@ -44,6 +46,13 @@ export default function FAQ() {
                     </a> */}
                 </div>
                 <div className="flex flex-col items-start justify-start mt-[30px] gap-[20px] relative">
+                    {faqs.map(faq => (
+                        <FAQItem
+                            key={faq.$oid}
+                            question={faq.question}
+                            answer={faq.question}
+                        />
+                        ))}
                     <FAQItem
                         question="Apa saja syarat melakukan seminar kerja praktik?"
                         answer="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut laboreet dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est laborum."
