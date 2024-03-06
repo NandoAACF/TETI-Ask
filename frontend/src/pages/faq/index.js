@@ -6,11 +6,11 @@ import Sidebar from "@/components/Sidebar";
 import { IoIosArrowDown } from "react-icons/io";
 import FAQItem from "@/components/FAQItem";
 import ModalFAQ from "@/components/ModalFAQ";
-import { useGetFaqs } from "@/services/faqs";
+import { useGetVerifiedFaqs } from "@/services/faqs";
 
 export default function FAQ() {
     const [modal, setModal] = useState(false);
-    const faqs = useGetFaqs();
+    const faqs = useGetVerifiedFaqs();
     const handleExit = () => {
         setModal(false);
     };
