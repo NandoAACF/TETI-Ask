@@ -16,13 +16,21 @@ export default function AdminDashboad() {
             <Sidebar activeIcon="admin-dashboard" />
             <div className="flex flex-col justify-start min-h-screen bg-slate-50 pt-[80px] sm:pt-[30px] pb-[30px] pr-[27px] sm:pr-[50px] pl-[40px] sm:pl-[153px] body">
                 <h3 className="text-[34px] sm:text-[40px] font-bold text-left">Admin Dashboard</h3>
-                <div className="flex flex-row items-center justify-start mt-[20px] gap-[15px]">
-                    <h4 className="text-[17px] font-medium text-left">Category:</h4>
-                    <select className="bg-white border-[1px] border-slate-300 rounded-[10px] w-[105px] sm:w-[150px] py-[5px] px-[7px] mt-[2px] hover:bg-white cursor-pointer outline-none transition-all ease-in-out duration-200">
-                        <option value="all">All</option>
-                        <option value="akademik">Akademik</option>
-                        <option value="organisasi">Organisasi</option>
-                    </select>
+                <div className="flex flex-col md:flex-row items-start md:items-center justify-start mt-[20px] gap-x-[20px] gap-y-[20px] md:gap-x-[35px] md:gap-y-[25px] md:flex-wrap">
+                    <div className="flex flex-row items-center justify-start gap-[15px]">
+                        <h4 className="text-[17px] font-medium text-left">Category:</h4>
+                        <select className="bg-white border-[1px] border-slate-300 rounded-[10px] w-[125px] sm:w-[150px] py-[5px] px-[7px] mt-[2px] hover:bg-white cursor-pointer outline-none transition-all ease-in-out duration-200">
+                            <option value="all">All</option>
+                            <option value="akademik">Akademik</option>
+                            <option value="organisasi">Organisasi</option>
+                        </select>
+                    </div>
+                    <a
+                        className="px-[20px] py-[5px] rounded-lg bg-red-600 text-white hover:bg-red-700 active:bg-red-800 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-red-700/[29%]"
+                        href="/register"
+                    >
+                        Add Admin
+                    </a>
                 </div>
                 <div className="flex flex-row items-center justify-start mt-[30px] flex-wrap gap-[40px]">
                     {docs.map((doc) => (
