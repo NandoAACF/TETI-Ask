@@ -13,3 +13,14 @@ export const useGetVerifiedDocument = () => {
     }, []);
     return docs;
 };
+
+export const useGetUnverifiedDocument = () => {
+    const [docs, setDocs] = useState([]);
+    useEffect(() => {
+        axios
+            .get(API_URL + "/documents/unverified")
+            .then((res) => setDocs(res.data))
+            .catch(console.log);
+    }, []);
+    return docs;
+};

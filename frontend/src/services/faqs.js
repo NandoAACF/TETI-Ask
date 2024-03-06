@@ -13,3 +13,14 @@ export const useGetVerifiedFaqs = () => {
     }, []);
     return faqs;
 };
+
+export const useGetUnverifiedFaqs = () => {
+    const [faqs, setFaqs] = useState([]);
+    useEffect(() => {
+        axios
+            .get(API_URL + "/faqs/unverified")
+            .then((res) => setFaqs(res.data))
+            .catch(console.log);
+    }, []);
+    return faqs;
+};

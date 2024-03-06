@@ -3,9 +3,11 @@ import { RiAddCircleFill } from "react-icons/ri";
 import { useState } from "react";
 import ModalDocument from "@/components/ModalDocument";
 import Sidebar from "@/components/Sidebar";
+import { useGetUnverifiedDocument } from "@/services/document";
 
 export default function AdminDashboad() {
     const [modal, setModal] = useState(false);
+    const docs = useGetUnverifiedDocument();
     const handleExit = () => {
         setModal(false);
     };
@@ -23,6 +25,16 @@ export default function AdminDashboad() {
                     </select>
                 </div>
                 <div className="flex flex-row items-center justify-start mt-[30px] flex-wrap gap-[40px]">
+                    {docs.map((doc) => (
+                        <CardDocumentAdmin
+                            key={doc.$oid}
+                            title={doc.title}
+                            category={doc.category}
+                            date={doc.date}
+                            description={doc.description}
+                            link={doc.link}
+                        />
+                    ))}
                     <CardDocumentAdmin
                         title="Buku Panduan"
                         category="Akademik"
