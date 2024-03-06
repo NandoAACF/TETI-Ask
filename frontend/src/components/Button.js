@@ -26,11 +26,15 @@ export default function Button({
     // hover:shadow-[0_4px_8px_rgba(249, 156, 16, 0.21)]
     const btnColor = useMemo(() => {
         if (type === "primary")
-            return `text-white bg-[#2984C9] hover:bg-[#2471AB] active:bg-[#1A5481] hover:shadow-lg hover:shadow-[#2471AB]/[29%] hover:-translate-y-[6px]`;
+            return `text-white bg-red-600 hover:bg-red-700 active:bg-red-800 hover:shadow-lg hover:shadow-red-700/[29%] hover:-translate-y-[6px]`;
+        if (type === "primary2")
+            return `text-white bg-orange-600 hover:bg-orange-700 active:bg-orange-800 hover:shadow-lg hover:shadow-orange-700/[29%] hover:-translate-y-[6px]`;
         if (type === "login")
-            return `text-white bg-red-600 hover:bg-700 active:bg-800 hover:shadow-lg hover:shadow-red-700/[29%] hover:-translate-y-[6px]`;
+            return `text-white bg-red-600 hover:bg-red-700 active:bg-red-800 hover:shadow-lg hover:shadow-red-700/[29%] hover:-translate-y-[6px]`;
         if (type === "secondary")
-            return `text-black bg-transparant hover:text-white hover:bg-[#2471AB] active:bg-[#1A5481] hover:shadow-lg hover:shadow-[#2471AB]/[29%] hover:-translate-y-[6px]`;
+            return `text-black bg-transparant hover:text-white hover:bg-red-600 active:bg-red-800 hover:shadow-lg hover:shadow-red-700/[29%] hover:-translate-y-[6px]`;
+        if (type === "secondary2")
+            return `text-black bg-transparant hover:text-white hover:bg-orange-600 active:bg-orange-800 hover:shadow-lg hover:shadow-orange-700/[29%] hover:-translate-y-[6px]`;
         if (type == "resetpassword")
             return `text-white bg-red-500 hover:bg-red-600 active:bg-red-700 hover:shadow-lg hover:shadow-red-500/[29%] hover:-translate-y-[6px]`;
         if (type == "disabled")

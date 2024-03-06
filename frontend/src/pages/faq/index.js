@@ -5,6 +5,7 @@ import ModalDocument from "@/components/ModalDocument";
 import Sidebar from "@/components/Sidebar";
 import { IoIosArrowDown } from "react-icons/io";
 import FAQItem from "@/components/FAQItem";
+import ModalFAQ from "@/components/ModalFAQ";
 
 export default function FAQ() {
     const [modal, setModal] = useState(false);
@@ -57,6 +58,15 @@ export default function FAQ() {
                     />
                 </div>
             </div>
+            <div
+                className="fixed right-[50px] bottom-[40px] text-[60px] sm:text-[90px] text-black hover:text-orange-700 active:text-orange-800 transition-all ease-in-out duration-200 cursor-pointer hover:scale-110"
+                onClick={() => {
+                    setModal(true);
+                }}
+            >
+                <RiAddCircleFill />
+            </div>
+            {modal && <ModalFAQ handleExit={handleExit} />}
         </>
     );
 }
