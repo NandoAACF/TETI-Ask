@@ -21,7 +21,7 @@ col_documents = db["Documents"]
 col_users = db["Users"]
 col_faq = db["FAQ"]
 
-@app.route('/document', methods=['POST'])
+@app.route('/api/document', methods=['POST'])
 def add_document():
     _json = request.json
     _title = _json['title']
@@ -41,31 +41,31 @@ def add_document():
     else:
         return not_found()
     
-@app.route('/documents', methods=['GET'])
+@app.route('/api/documents', methods=['GET'])
 def documents():
     documents = col_documents.find()
     resp = dumps(documents)
     return resp
 
-@app.route('/document/<id>', methods=['GET'])
+@app.route('/api/document/<id>', methods=['GET'])
 def document(id):
     document = col_documents.find_one({'_id': ObjectId(id)})
     resp = dumps(document)
     return resp
 
-@app.route('/documents/unverified', methods=['GET'])
+@app.route('/api/documents/unverified', methods=['GET'])
 def documents_unverified():
     documents = col_documents.find({'status': 'unverified'})
     resp = dumps(documents)
     return resp
 
-@app.route('/documents/verified', methods=['GET'])
+@app.route('/api/documents/verified', methods=['GET'])
 def documents_verified():
     documents = col_documents.find({'status': 'verified'})
     resp = dumps(documents)
     return resp
 
-@app.route('/document/verify/<id>', methods=['PUT'])
+@app.route('/api/document/verify/<id>', methods=['PUT'])
 def verify_document(id):
     _id = id
     if _id and request.method == 'PUT':
@@ -76,14 +76,14 @@ def verify_document(id):
     else:
         return not_found()
 
-@app.route('/document/<id>', methods=['DELETE'])
+@app.route('/api/document/<id>', methods=['DELETE'])
 def delete_document(id):
     col_documents.delete_one({'_id': ObjectId(id)})
     resp = jsonify('Document deleted successfully!')
     resp.status_code = 200
     return resp
 
-@app.route('/document/<id>', methods=['PUT'])
+@app.route('/api/document/<id>', methods=['PUT'])
 def update_document(id):
     _id = id
     _json = request.json
@@ -101,7 +101,7 @@ def update_document(id):
     else:
         return not_found()
 
-@app.route('/documents/category/verified/<category>', methods=['GET'])
+@app.route('/api/documents/category/verified/<category>', methods=['GET'])
 def documents_filter_verified(category):
     documents = col_documents
     if category == 'all':
@@ -111,7 +111,7 @@ def documents_filter_verified(category):
     resp = dumps(documents)
     return resp
 
-@app.route('/documents/category/unverified/<category>', methods=['GET'])
+@app.route('/api/documents/category/unverified/<category>', methods=['GET'])
 def documents_filter_unverified(category):
     documents = col_documents
     if category == 'all':
@@ -121,7 +121,7 @@ def documents_filter_unverified(category):
     resp = dumps(documents)
     return resp
     
-@app.route('/register', methods=['POST'])
+@app.route('/api/register', methods=['POST'])
 def register_admin():
     _json = request.json
     _name = _json['name']
@@ -137,7 +137,7 @@ def register_admin():
     else:
         return not_found()
     
-@app.route('/login', methods=['POST'])
+@app.route('/api/login', methods=['POST'])
 def login_admin():
     _json = request.json
     _email = _json['email']
@@ -158,7 +158,7 @@ def login_admin():
         resp.status_code = 400
         return resp
     
-@app.route('/faq', methods=['POST'])
+@app.route('/api/faq', methods=['POST'])
 def add_faq():
     _json = request.json
     _question = _json['question']
@@ -174,31 +174,31 @@ def add_faq():
     else:
         return not_found()
     
-@app.route('/faqs', methods=['GET'])
+@app.route('/api/faqs', methods=['GET'])
 def faqs():
     faqs = col_faq.find()
     resp = dumps(faqs)
     return resp
 
-@app.route('/faq/<id>', methods=['GET'])
+@app.route('/api/faq/<id>', methods=['GET'])
 def faq(id):
     faq = col_faq.find_one({'_id': ObjectId(id)})
     resp = dumps(faq)
     return resp
 
-@app.route('/faqs/unverified', methods=['GET'])
+@app.route('/api/faqs/unverified', methods=['GET'])
 def faqs_unverified():
     faqs = col_faq.find({'status': 'unverified'})
     resp = dumps(faqs)
     return resp
 
-@app.route('/faqs/verified', methods=['GET'])
+@app.route('/api/faqs/verified', methods=['GET'])
 def faqs_verified():
     faqs = col_faq.find({'status': 'verified'})
     resp = dumps(faqs)
     return resp
 
-@app.route('/faq/verify/<id>', methods=['PUT'])
+@app.route('/api/faq/verify/<id>', methods=['PUT'])
 def verify_faq(id):
     _id = id
     if _id and request.method == 'PUT':
@@ -209,14 +209,14 @@ def verify_faq(id):
     else:
         return not_found()
 
-@app.route('/faq/<id>', methods=['DELETE'])
+@app.route('/api/faq/<id>', methods=['DELETE'])
 def delete_faq(id):
     col_faq.delete_one({'_id': ObjectId(id)})
     resp = jsonify('FAQ deleted successfully!')
     resp.status_code = 200
     return resp
 
-@app.route('/faq/<id>', methods=['PUT'])
+@app.route('/api/faq/<id>', methods=['PUT'])
 def update_faq(id):
     _id = id
     _json = request.json
@@ -233,7 +233,7 @@ def update_faq(id):
     else:
         return not_found()
     
-@app.route('/faqs/category/verified/<category>', methods=['GET'])
+@app.route('/api/faqs/category/verified/<category>', methods=['GET'])
 def faqs_filter_verified(category):
     faqs = col_faq
     if category == 'all':
@@ -243,7 +243,7 @@ def faqs_filter_verified(category):
     resp = dumps(faqs)
     return resp
 
-@app.route('/faqs/category/unverified/<category>', methods=['GET'])
+@app.route('/api/faqs/category/unverified/<category>', methods=['GET'])
 def faqs_filter_unverified(category):
     faqs = col_faq
     if category == 'all':
