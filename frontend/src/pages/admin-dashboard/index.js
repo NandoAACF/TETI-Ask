@@ -43,7 +43,7 @@ export default function AdminDashboad() {
                             link={doc.link}
                         />
                     ))}
-                    <CardDocumentAdmin
+                    {/* <CardDocumentAdmin
                         title="Buku Panduan"
                         category="Akademik"
                         date="14 Februari 2024"
@@ -56,49 +56,7 @@ export default function AdminDashboad() {
                         date="14 Februari 2024"
                         description="Dokumen ini berisi panduan untuk kegiatan akademik"
                         link="https://docs.google.com/document/d/1uyeYHZDYmIRauOLuYesSFHFc-BqG7iA7gn4t7qnmuhk/edit?usp=sharing"
-                    />
-                    <CardDocumentAdmin
-                        title="Buku Panduan"
-                        category="Akademik"
-                        date="14 Februari 2024"
-                        description="Dokumen ini berisi panduan untuk kegiatan akademik"
-                        link="https://docs.google.com/document/d/1uyeYHZDYmIRauOLuYesSFHFc-BqG7iA7gn4t7qnmuhk/edit?usp=sharing"
-                    />
-                    <CardDocumentAdmin
-                        title="Buku Panduan"
-                        category="Akademik"
-                        date="14 Februari 2024"
-                        description="Dokumen ini berisi panduan untuk kegiatan akademik"
-                        link="https://docs.google.com/document/d/1uyeYHZDYmIRauOLuYesSFHFc-BqG7iA7gn4t7qnmuhk/edit?usp=sharing"
-                    />
-                    <CardDocumentAdmin
-                        title="Buku Panduan"
-                        category="Akademik"
-                        date="14 Februari 2024"
-                        description="Dokumen ini berisi panduan untuk kegiatan akademik"
-                        link="https://docs.google.com/document/d/1uyeYHZDYmIRauOLuYesSFHFc-BqG7iA7gn4t7qnmuhk/edit?usp=sharing"
-                    />
-                    <CardDocumentAdmin
-                        title="Buku Panduan"
-                        category="Akademik"
-                        date="14 Februari 2024"
-                        description="Dokumen ini berisi panduan untuk kegiatan akademik"
-                        link="https://docs.google.com/document/d/1uyeYHZDYmIRauOLuYesSFHFc-BqG7iA7gn4t7qnmuhk/edit?usp=sharing"
-                    />
-                    <CardDocumentAdmin
-                        title="Buku Panduan"
-                        category="Akademik"
-                        date="14 Februari 2024"
-                        description="Dokumen ini berisi panduan untuk kegiatan akademik"
-                        link="https://docs.google.com/document/d/1uyeYHZDYmIRauOLuYesSFHFc-BqG7iA7gn4t7qnmuhk/edit?usp=sharing"
-                    />
-                    <CardDocumentAdmin
-                        title="Buku Panduan"
-                        category="Akademik"
-                        date="14 Februari 2024"
-                        description="Dokumen ini berisi panduan untuk kegiatan akademik"
-                        link="https://docs.google.com/document/d/1uyeYHZDYmIRauOLuYesSFHFc-BqG7iA7gn4t7qnmuhk/edit?usp=sharing"
-                    />
+                    /> */}
                 </div>
             </div>
             <div

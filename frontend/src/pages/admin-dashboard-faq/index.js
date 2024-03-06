@@ -50,7 +50,7 @@ export default function AdminDashboardFAQ() {
                     {faqs.map((faq) => (
                         <FAQItemAdmin key={faq.$oid} question={faq.question} answer={faq.answer} />
                     ))}
-                    <FAQItemAdmin
+                    {/* <FAQItemAdmin
                         question="Apa saja syarat melakukan seminar kerja praktik?"
                         answer="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut laboreet dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est laborum."
                     />
@@ -61,7 +61,7 @@ export default function AdminDashboardFAQ() {
                     <FAQItemAdmin
                         question="Apa saja syarat melakukan seminar kerja praktik?"
                         answer="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut laboreet dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est laborum."
-                    />
+                    /> */}
                 </div>
             </div>
             <div
