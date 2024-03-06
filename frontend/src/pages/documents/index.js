@@ -3,9 +3,11 @@ import { RiAddCircleFill } from "react-icons/ri";
 import { useState } from "react";
 import ModalDocument from "@/components/ModalDocument";
 import Sidebar from "@/components/Sidebar";
+import { useGetDocument } from "@/services/document";
 
 export default function Document() {
     const [modal, setModal] = useState(false);
+    const docs = useGetDocument();
     const handleExit = () => {
         setModal(false);
     };
@@ -41,6 +43,16 @@ export default function Document() {
                     </a>
                 </div>
                 <div className="flex flex-row items-center justify-start mt-[30px] flex-wrap gap-[40px]">
+                    {docs.map(doc => (
+                        <CardDocument
+                            key={doc.$oid}
+                            title={doc.title}
+                            category={doc.category}
+                            date={doc.date}
+                            description={doc.description}
+                            link={doc.link}
+                        />
+                    ))}
                     <CardDocument
                         title="Buku Panduan"
                         category="Akademik"
