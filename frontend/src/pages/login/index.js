@@ -1,6 +1,7 @@
 import Button from "@/components/Button";
 import Input from "@/components/Input";
 import { useRouter } from "next/router";
+import { router } from "next/router";
 
 export default function Login() {
     return (
@@ -21,21 +22,21 @@ export default function Login() {
                 <form className="flex flex-col items-start justify-center w-full h-full gap-[14px] px-[16%] md:px-[18%] relative">
                     <Input label="Email" type="email" className="w-full" name="email" error="emailError" />
                     <Input label="Password" type="password" className="w-full" name="password" error="passwordError" />
-                    <h5
+                    {/* <h5
                         onClick={() => router.push("/forgot-password")}
                         className="text-[14px] underline cursor-pointer hover:text-[#c92929] hover:scale-110 transition-all ease-in-out duration-300"
                     >
                         Forgot Password?
-                    </h5>
+                    </h5> */}
                     <Button text="Login" type="login" size="md" className="w-full mt-[30px] lg:mt-[40px]" />
                 </form>
                 <h3 className="text-[17px] sm:text-[19px] text-center mt-[30px] mx-[20px] sm:mx-0">
                     Don&apos;t have an account?{" "}
                     <span
-                        onClick={() => router.push("/register")}
+                        onClick={() => router.push("https://wa.me/6282137175482")}
                         className="underline cursor-pointer text-[#c92929] hover:text-[#ab2424]"
                     >
-                        Register
+                        Ask Admin
                     </span>
                 </h3>
             </div>
