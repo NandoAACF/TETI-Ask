@@ -6,6 +6,7 @@ import Sidebar from "@/components/Sidebar";
 import { IoIosArrowDown } from "react-icons/io";
 import FAQItem from "@/components/FAQItem";
 import FAQItemAdmin from "@/components/FAQItemAdmin";
+import ModalFAQ from "@/components/ModalFAQ";
 
 export default function AdminDashboardFAQ() {
     const [modal, setModal] = useState(false);
@@ -66,7 +67,7 @@ export default function AdminDashboardFAQ() {
             >
                 <RiAddCircleFill />
             </div>
-            {modal && <ModalDocument handleExit={handleExit} />}
+            {modal && <ModalFAQ handleExit={handleExit} />}
         </>
     );
 }

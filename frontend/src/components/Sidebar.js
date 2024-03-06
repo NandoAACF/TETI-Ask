@@ -1,15 +1,22 @@
 import Link from "next/link";
 import { FaTasks } from "react-icons/fa";
 import { CgNotes, CgProfile } from "react-icons/cg";
-import { TbLogout2 } from "react-icons/tb";
+import { TbLogout2, TbLogin2 } from "react-icons/tb";
 import { TbMessageChatbot } from "react-icons/tb";
 import { FaRobot } from "react-icons/fa";
 import { FaQuestion } from "react-icons/fa";
 import { MdQuestionMark } from "react-icons/md";
 import { FaRegQuestionCircle } from "react-icons/fa";
+import { GrDocumentUser, GrDocumentLocked } from "react-icons/gr";
 import clsx from "clsx";
+import { useState } from "react";
+import { router } from "next/router";
 
 export default function Sidebar({ activeIcon }) {
+    const [loggedIn, setLoggedIn] = useState(false);
+    const handleLog = () => {
+        router.push("/login");
+    };
     return (
         <>
             <div
@@ -48,7 +55,7 @@ export default function Sidebar({ activeIcon }) {
                             className={`text-[24px] sm:text-[30px] transition-all ease-in-out duration-200 hover:scale-110 rounded-lg p-[8px] sm:p-[15px] cursor-pointer
                         ${activeIcon === "admin-dashboard" ? "bg-red-900" : "hover:bg-red-800 active:bg-red-800"}`}
                         >
-                            <CgProfile color="white" />
+                            <GrDocumentLocked color="white" />
                         </div>
                     </Link>
                     <Link href="/admin-dashboard-faq">
@@ -60,8 +67,11 @@ export default function Sidebar({ activeIcon }) {
                         </div>
                     </Link>
                 </div>
-                <div className="text-[24px] sm:text-[30px] hover:bg-red-800 active:bg-red-900 transition-all ease-in-out duration-300 hover:scale-110 rounded-lg p-[8px] sm:p-[15px] cursor-pointer sm:mb-[30px]">
-                    <TbLogout2 color="white" />
+                <div
+                    className="text-[24px] sm:text-[30px] hover:bg-red-800 active:bg-red-900 transition-all ease-in-out duration-300 hover:scale-110 rounded-lg p-[8px] sm:p-[15px] cursor-pointer sm:mb-[30px]"
+                    onClick={handleLog}
+                >
+                    {loggedIn ? <TbLogout2 color="white" /> : <TbLogin2 color="white" />}
                 </div>
             </div>
         </>
