@@ -50,7 +50,7 @@ export default function FAQ() {
                         <FAQItem
                             key={faq.$oid}
                             question={faq.question}
-                            answer={faq.question}
+                            answer={faq.answer}
                         />
                         ))}
                     <FAQItem
