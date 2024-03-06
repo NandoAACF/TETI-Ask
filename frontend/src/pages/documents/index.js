@@ -51,6 +51,7 @@ export default function Document() {
                             date={doc.date}
                             description={doc.description}
                             link={doc.link}
+                            loggedIn={false} // Nanti kalau admin login, tolong ini dibikin otomatis berubah ke true ya
                         />
                     ))}
                     <CardDocument
@@ -64,7 +65,7 @@ export default function Document() {
                         title="Buku Panduan"
                         category="Akademik"
                         date="14 Februari 2024"
-                        description="Dokumen ini berisi panduan untuk kegiatan akademik"
+                        description="Dokumen ini"
                         link="https://docs.google.com/document/d/1uyeYHZDYmIRauOLuYesSFHFc-BqG7iA7gn4t7qnmuhk/edit?usp=sharing"
                     />
                     <CardDocument
