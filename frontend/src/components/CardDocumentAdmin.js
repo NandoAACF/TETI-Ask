@@ -6,7 +6,7 @@ export default function CardDocumentAdmin({
     link = "https://docs.google.com/document/d/1uyeYHZDYmIRauOLuYesSFHFc-BqG7iA7gn4t7qnmuhk/edit?usp=sharing",
 }) {
     return (
-        <div className="flex flex-col items-center justify-between max-w-[280px] min-h-[170px] pb-[20px] bg-white rounded-[10px] shadow-md relative">
+        <div className="flex flex-col items-center justify-between w-[259px] sm:w-[279px] min-h-[170px] pb-[20px] bg-white rounded-[10px] shadow-md relative">
             <div className="flex flex-col items-start justify-start w-full">
                 <div className="w-full h-[30px] rounded-t-[10px] bg-red-600"></div>
                 <div className="flex flex-col items-start justify-start w-full px-[13px] mt-[10px]">
