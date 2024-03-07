@@ -22,3 +22,12 @@ export const useGetUnverifiedFaqs = () => {
     }, []);
     return faqs;
 };
+
+export const postFaq = async (faq) => {
+    const payload = {
+        ...faq,
+        status: "unverified",
+        category: "Akademik"
+    }
+    return api.post("/faq", payload)
+}
