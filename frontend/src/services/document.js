@@ -35,3 +35,7 @@ export const postDocument = async (document) => {
 export const verifyDocument = async (id) => {
     return api.put(`/document/verify/${id}`)
 }
+
+export const deleteDocument = async (id) => {
+    return api.delete(`/document/${id}`)
+}

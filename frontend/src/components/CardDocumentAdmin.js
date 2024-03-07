@@ -1,4 +1,4 @@
-import { verifyDocument } from "@/services/document";
+import { deleteDocument, verifyDocument } from "@/services/document";
 
 export default function CardDocumentAdmin({
     id,
@@ -14,6 +14,14 @@ export default function CardDocumentAdmin({
             console.log("verified document :", res.data)
         } catch (error) {
             console.log("failed to verify document", error)
+        }
+    }
+    const handleRejectDocument = async () => {
+        try {
+            const res = await deleteDocument(id);
+            console.log("rejected document :", res.data)
+        } catch (error) {
+            console.log("failed to reject document", error)
         }
     }
     return (
@@ -41,14 +49,14 @@ export default function CardDocumentAdmin({
                     >
                         Verify Document
                     </button>
-                    <a
+                    <button
                         className="w-full px-[10px] py-[5px] rounded-lg bg-red-600 text-white mt-[13px] hover:bg-red-700 active:bg-red-800 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-[#2471AB]/[29%]"
-                        href={link}
+                        onClick={handleRejectDocument}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
                         Reject Document
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>

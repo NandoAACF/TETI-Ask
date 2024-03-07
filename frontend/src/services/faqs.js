@@ -35,3 +35,7 @@ export const postFaq = async (faq) => {
 export const verifyFAQ = async (id) => {
     return api.put(`/faq/verify/${id}`)
 }
+
+export const deleteFAQ = async (id) => {
+    return api.delete(`/faq/${id}`)
+}

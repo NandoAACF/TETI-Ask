@@ -1,4 +1,4 @@
-import { verifyFAQ } from "@/services/faqs";
+import { deleteFAQ, verifyFAQ } from "@/services/faqs";
 import clsx from "clsx";
 import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
@@ -19,6 +19,14 @@ export default function FAQItemAdmin({
             console.log("verified FAQ :", res.data)
         } catch (error) {
             console.log("failed to verify FAQ", error)
+        }
+    }
+    const handleRejectFAQ = async () => {
+        try {
+            const res = await deleteFAQ(id);
+            console.log("rejected FAQ :", res.data)
+        } catch (error) {
+            console.log("failed to reject FAQ", error)
         }
     }
     return (
@@ -42,14 +50,14 @@ export default function FAQItemAdmin({
                 >
                     Verify QnA
                 </button>
-                <a
+                <button
                     className="px-[14px] py-[5px] rounded-lg bg-red-600 text-white hover:bg-red-800 active:bg-red-900 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-[#2471AB]/[29%]"
-                    href={link}
+                    onClick={handleRejectFAQ}
                     target="_blank"
                     rel="noopener noreferrer"
                 >
                     Reject QnA
-                </a>
+                </button>
             </div>
             <div className="bg-orange-600 w-full h-[3px] mt-[13px]"></div>
         </div>
