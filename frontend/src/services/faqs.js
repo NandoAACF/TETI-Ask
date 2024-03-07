@@ -1,13 +1,11 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-
-export const API_URL = "http://localhost:5000/api";
+import api from "./api";
 
 export const useGetVerifiedFaqs = () => {
     const [faqs, setFaqs] = useState([]);
     useEffect(() => {
-        axios
-            .get(API_URL + "/faqs/verified")
+        api
+            .get("/faqs/verified")
             .then((res) => setFaqs(res.data))
             .catch(console.log);
     }, []);
@@ -17,8 +15,8 @@ export const useGetVerifiedFaqs = () => {
 export const useGetUnverifiedFaqs = () => {
     const [faqs, setFaqs] = useState([]);
     useEffect(() => {
-        axios
-            .get(API_URL + "/faqs/unverified")
+        api
+            .get("/faqs/unverified")
             .then((res) => setFaqs(res.data))
             .catch(console.log);
     }, []);

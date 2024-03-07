@@ -1,13 +1,11 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-
-export const API_URL = "http://localhost:5000/api";
+import api from "./api";
 
 export const useGetVerifiedDocument = () => {
     const [docs, setDocs] = useState([]);
     useEffect(() => {
-        axios
-            .get(API_URL + "/documents/verified")
+        api
+            .get("/documents/verified")
             .then((res) => setDocs(res.data))
             .catch(console.log);
     }, []);
@@ -17,8 +15,8 @@ export const useGetVerifiedDocument = () => {
 export const useGetUnverifiedDocument = () => {
     const [docs, setDocs] = useState([]);
     useEffect(() => {
-        axios
-            .get(API_URL + "/documents/unverified")
+        api
+            .get("/documents/unverified")
             .then((res) => setDocs(res.data))
             .catch(console.log);
     }, []);
