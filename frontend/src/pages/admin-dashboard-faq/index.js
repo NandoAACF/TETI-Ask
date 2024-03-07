@@ -48,7 +48,7 @@ export default function AdminDashboardFAQ() {
                 </div>
                 <div className="flex flex-col items-start justify-start mt-[30px] gap-[20px] relative">
                     {faqs.map((faq) => (
-                        <FAQItemAdmin key={faq.$oid} question={faq.question} answer={faq.answer} />
+                        <FAQItemAdmin key={faq._id.$oid} id={faq._id.$oid} question={faq.question} answer={faq.answer} />
                     ))}
                     {/* <FAQItemAdmin
                         question="Apa saja syarat melakukan seminar kerja praktik?"

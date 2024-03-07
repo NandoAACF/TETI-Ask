@@ -31,3 +31,7 @@ export const postFaq = async (faq) => {
     }
     return api.post("/faq", payload)
 }
+
+export const verifyFAQ = async (id) => {
+    return api.put(`/faq/verify/${id}`)
+}
