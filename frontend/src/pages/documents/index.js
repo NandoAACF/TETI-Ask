@@ -45,7 +45,7 @@ export default function Document() {
                 <div className="flex flex-row items-center justify-start mt-[30px] flex-wrap gap-[40px]">
                     {docs.map((doc) => (
                         <CardDocument
-                            key={doc.$oid}
+                            key={doc._id.$oid}
                             title={doc.title}
                             category={doc.category}
                             date={doc.date}

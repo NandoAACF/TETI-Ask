@@ -31,3 +31,7 @@ export const postDocument = async (document) => {
     }
     return api.post("/document", payload)
 }
+
+export const verifyDocument = async (id) => {
+    return api.put(`/document/verify/${id}`)
+}

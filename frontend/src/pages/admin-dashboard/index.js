@@ -35,7 +35,8 @@ export default function AdminDashboad() {
                 <div className="flex flex-row items-center justify-start mt-[30px] flex-wrap gap-[40px]">
                     {docs.map((doc) => (
                         <CardDocumentAdmin
-                            key={doc.$oid}
+                            id={doc._id.$oid}
+                            key={doc._id.$oid}
                             title={doc.title}
                             category={doc.category}
                             date={doc.date}

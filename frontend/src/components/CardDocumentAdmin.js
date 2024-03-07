@@ -1,10 +1,21 @@
+import { verifyDocument } from "@/services/document";
+
 export default function CardDocumentAdmin({
+    id,
     title = "Buku Panduan",
     category = "Akademik",
     date = "14 Februari 2024",
     description = "Dokumen ini berisi panduan untuk kegiatan akademik",
     link = "https://docs.google.com/document/d/1uyeYHZDYmIRauOLuYesSFHFc-BqG7iA7gn4t7qnmuhk/edit?usp=sharing",
 }) {
+    const handleVerivyDocument = async () => {
+        try {
+            const res = await verifyDocument(id);
+            console.log("verified document :", res.data)
+        } catch (error) {
+            console.log("failed to verify document", error)
+        }
+    }
     return (
         <div className="flex flex-col items-center justify-between w-[259px] sm:w-[279px] sm:h-[290px] pb-[20px] bg-white rounded-[10px] shadow-md relative">
             <div className="flex flex-col items-start justify-between w-full h-full">
@@ -22,14 +33,14 @@ export default function CardDocumentAdmin({
                     </div>
                 </div>
                 <div className="flex flex-col items-start justify-start w-full px-[13px]">
-                    <a
+                    <button
                         className="w-full px-[10px] py-[5px] rounded-lg bg-green-600 text-white mt-[10px] hover:bg-green-800 active:bg-green-900 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-[#2471AB]/[29%]"
-                        href={link}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={handleVerivyDocument}
                     >
                         Verify Document
-                    </a>
+                    </button>
                     <a
                         className="w-full px-[10px] py-[5px] rounded-lg bg-red-600 text-white mt-[13px] hover:bg-red-700 active:bg-red-800 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-[#2471AB]/[29%]"
                         href={link}
