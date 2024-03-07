@@ -22,3 +22,12 @@ export const useGetUnverifiedDocument = () => {
     }, []);
     return docs;
 };
+
+export const postDocument = async (document) => {
+    const payload = {
+        ...document,
+        status: "unverified",
+        category: "Akademik"
+    }
+    return api.post("/document", payload)
+}
