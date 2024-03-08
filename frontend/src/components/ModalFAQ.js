@@ -1,5 +1,6 @@
 import { postFaq } from "@/services/faqs";
 import Button from "./Button";
+import { toast } from "react-toastify";
 
 export default function ModalFAQ({ handleExit }) {
     const handlePostFAQ = async (e) => {
@@ -11,10 +12,10 @@ export default function ModalFAQ({ handleExit }) {
         }
         try {
             const res = await postFaq(faq);
-            console.log("post FAQ :", res.data)
-            handleExit()
+            toast.success(res.data);
+            handleExit();
         } catch (error) {
-            console.log("failed to post FAQ", error);
+            toast.error("failed to post FAQ " + error.message)
         }
     }
     return (

@@ -1,4 +1,5 @@
 import { deleteDocument, verifyDocument } from "@/services/document";
+import { toast } from "react-toastify";
 
 export default function CardDocumentAdmin({
     id,
@@ -11,17 +12,17 @@ export default function CardDocumentAdmin({
     const handleVerivyDocument = async () => {
         try {
             const res = await verifyDocument(id);
-            console.log("verified document :", res.data)
+            toast.info(res.data)
         } catch (error) {
-            console.log("failed to verify document", error)
+            toast.error("failed to verify document " + error)
         }
     }
     const handleRejectDocument = async () => {
         try {
             const res = await deleteDocument(id);
-            console.log("rejected document :", res.data)
+            toast.info(res.data)
         } catch (error) {
-            console.log("failed to reject document", error)
+            toast.error("failed to reject document " + error)
         }
     }
     return (

@@ -1,5 +1,6 @@
 import { postDocument } from "@/services/document";
 import Button from "./Button";
+import { toast } from "react-toastify";
 
 export default function ModalDocument({ handleExit }) {
     const handlePostDocument = async (e) => {
@@ -12,10 +13,10 @@ export default function ModalDocument({ handleExit }) {
         }
         try {
             const res = await postDocument(document);
-            console.log("post document :", res.data)
+            toast.success(res.data);
             handleExit()
         } catch (error) {
-            console.log("failed to post document", error);
+            toast.error("failed to post document " + error.message)
         }
     }
     return (

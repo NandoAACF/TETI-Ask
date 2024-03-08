@@ -2,6 +2,7 @@ import { deleteFAQ, verifyFAQ } from "@/services/faqs";
 import clsx from "clsx";
 import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
+import { toast } from "react-toastify";
 
 export default function FAQItemAdmin({
     id,
@@ -16,17 +17,17 @@ export default function FAQItemAdmin({
     const handleVerivyFAQ = async () => {
         try {
             const res = await verifyFAQ(id);
-            console.log("verified FAQ :", res.data)
+            toast.info(res.data)
         } catch (error) {
-            console.log("failed to verify FAQ", error)
+            toast.error("failed to verify FAQ " + error)
         }
     }
     const handleRejectFAQ = async () => {
         try {
             const res = await deleteFAQ(id);
-            console.log("rejected FAQ :", res.data)
+            toast.info(res.data)
         } catch (error) {
-            console.log("failed to reject FAQ", error)
+            toast.error("failed to reject FAQ " + error)
         }
     }
     return (
