@@ -4,10 +4,12 @@ import { useState } from "react";
 import ModalDocument from "@/components/ModalDocument";
 import Sidebar from "@/components/Sidebar";
 import { useGetVerifiedDocument } from "@/services/document";
+import { useAdmin } from "@/services/admin";
 
 export default function Document() {
     const [modal, setModal] = useState(false);
     const docs = useGetVerifiedDocument();
+    const admin = useAdmin();
     const handleExit = () => {
         setModal(false);
     };
@@ -51,7 +53,7 @@ export default function Document() {
                             date={doc.date}
                             description={doc.description}
                             link={doc.link}
-                            loggedIn={false} // Nanti kalau admin login, tolong ini dibikin otomatis berubah ke true ya
+                            loggedIn={admin.loggedIn} // Nanti kalau admin login, tolong ini dibikin otomatis berubah ke true ya
                         />
                     ))}
                     {/* <CardDocument

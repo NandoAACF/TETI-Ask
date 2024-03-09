@@ -7,10 +7,12 @@ import { IoIosArrowDown } from "react-icons/io";
 import FAQItem from "@/components/FAQItem";
 import ModalFAQ from "@/components/ModalFAQ";
 import { useGetVerifiedFaqs } from "@/services/faqs";
+import { useAdmin } from "@/services/admin";
 
 export default function FAQ() {
     const [modal, setModal] = useState(false);
     const faqs = useGetVerifiedFaqs();
+    const admin = useAdmin();
     const handleExit = () => {
         setModal(false);
     };
@@ -47,7 +49,7 @@ export default function FAQ() {
                 </div>
                 <div className="flex flex-col items-start justify-start mt-[30px] gap-[20px] relative">
                     {faqs.data.map((faq) => (
-                        <FAQItem key={faq.$oid} question={faq.question} answer={faq.answer} loggedIn={false} />
+                        <FAQItem key={faq.$oid} question={faq.question} answer={faq.answer} loggedIn={admin.loggedIn} />
                     ))}
                     {/* <FAQItem
                         question="Apa saja syarat melakukan seminar kerja praktik?"

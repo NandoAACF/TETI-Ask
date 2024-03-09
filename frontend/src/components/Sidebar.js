@@ -11,11 +11,18 @@ import { GrDocumentUser, GrDocumentLocked } from "react-icons/gr";
 import clsx from "clsx";
 import { useState } from "react";
 import { router } from "next/router";
+import { useAdmin } from "@/services/admin";
+import { toast } from "react-toastify";
 
 export default function Sidebar({ activeIcon }) {
-    const [loggedIn, setLoggedIn] = useState(false);
+    const admin = useAdmin();
     const handleLog = () => {
-        router.push("/login");
+        if(admin.loggedIn){
+            admin.logout();
+            toast.info("logged out");
+        }
+        else
+            router.push("/login");
     };
     return (
         <>
@@ -50,28 +57,32 @@ export default function Sidebar({ activeIcon }) {
                             <MdQuestionMark color="white" />
                         </div>
                     </Link>
-                    <Link href="/admin-dashboard">
-                        <div
-                            className={`text-[24px] sm:text-[30px] transition-all ease-in-out duration-200 hover:scale-110 rounded-lg p-[8px] sm:p-[15px] cursor-pointer
-                        ${activeIcon === "admin-dashboard" ? "bg-red-900" : "hover:bg-red-800 active:bg-red-800"}`}
-                        >
-                            <GrDocumentLocked color="white" />
-                        </div>
-                    </Link>
-                    <Link href="/admin-dashboard-faq">
-                        <div
-                            className={`text-[24px] sm:text-[30px] transition-all ease-in-out duration-200 hover:scale-110 rounded-lg p-[8px] sm:p-[15px] cursor-pointer
-                        ${activeIcon === "admin-dashboard-faq" ? "bg-red-900" : "hover:bg-red-800 active:bg-red-800"}`}
-                        >
-                            <FaRegQuestionCircle color="white" />
-                        </div>
-                    </Link>
+                    {admin.loggedIn && 
+                        <Link href="/admin-dashboard">
+                            <div
+                                className={`text-[24px] sm:text-[30px] transition-all ease-in-out duration-200 hover:scale-110 rounded-lg p-[8px] sm:p-[15px] cursor-pointer
+                            ${activeIcon === "admin-dashboard" ? "bg-red-900" : "hover:bg-red-800 active:bg-red-800"}`}
+                            >
+                                <GrDocumentLocked color="white" />
+                            </div>
+                        </Link>
+                    }
+                    {admin.loggedIn && 
+                        <Link href="/admin-dashboard-faq">
+                            <div
+                                className={`text-[24px] sm:text-[30px] transition-all ease-in-out duration-200 hover:scale-110 rounded-lg p-[8px] sm:p-[15px] cursor-pointer
+                            ${activeIcon === "admin-dashboard-faq" ? "bg-red-900" : "hover:bg-red-800 active:bg-red-800"}`}
+                            >
+                                <FaRegQuestionCircle color="white" />
+                            </div>
+                        </Link>
+                    }
                 </div>
                 <div
                     className="text-[24px] sm:text-[30px] hover:bg-red-800 active:bg-red-900 transition-all ease-in-out duration-300 hover:scale-110 rounded-lg p-[8px] sm:p-[15px] cursor-pointer sm:mb-[30px]"
                     onClick={handleLog}
                 >
-                    {loggedIn ? <TbLogout2 color="white" /> : <TbLogin2 color="white" />}
+                    {admin.loggedIn ? <TbLogout2 color="white" /> : <TbLogin2 color="white" />}
                 </div>
             </div>
         </>
