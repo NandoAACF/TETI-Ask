@@ -1,9 +1,29 @@
 import Button from "@/components/Button";
 import Input from "@/components/Input";
+import { useAdmin } from "@/services/admin";
 import { useRouter } from "next/router";
 import { router } from "next/router";
+import { toast } from "react-toastify";
 
 export default function Login() {
+    const admin = useAdmin();
+    const router = useRouter();
+    const handleLogin = async (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const credentials = {
+            email: form.email.value,
+            password: form.password.value
+        };
+        try {
+            const res = await admin.login(credentials);
+            router.replace("/documents");
+            toast.info(res.data);
+        }
+        catch (error) {
+            toast.error("Failed to login : " + error.response.data);
+        };
+    }
     return (
         <div className="flex flex-col lg:flex-row items-center justify-center min-h-screen overflow-hidden relative my-[50px] lg:my-0">
             <div className="flex flex-col items-center justify-center w-full h-full lg:ml-[50px] lg:-mt-[40px]">
@@ -19,7 +39,10 @@ export default function Login() {
                 />
             </div>
             <div className="flex flex-col items-center justify-center w-full h-full mt-[40px] md:mt-[40px]">
-                <form className="flex flex-col items-start justify-center w-full h-full gap-[14px] px-[16%] md:px-[18%] relative">
+                <form 
+                    className="flex flex-col items-start justify-center w-full h-full gap-[14px] px-[16%] md:px-[18%] relative"
+                    onSubmit={handleLogin}
+                >
                     <Input label="Email" type="email" className="w-full" name="email" error="emailError" />
                     <Input label="Password" type="password" className="w-full" name="password" error="passwordError" />
                     {/* <h5
