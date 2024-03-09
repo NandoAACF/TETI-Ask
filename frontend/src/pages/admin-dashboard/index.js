@@ -33,7 +33,7 @@ export default function AdminDashboad() {
                     </a>
                 </div>
                 <div className="flex flex-row items-center justify-start mt-[30px] flex-wrap gap-[40px]">
-                    {docs.map((doc) => (
+                    {docs.data.map((doc) => (
                         <CardDocumentAdmin
                             id={doc._id.$oid}
                             key={doc._id.$oid}
@@ -42,6 +42,7 @@ export default function AdminDashboad() {
                             date={doc.date}
                             description={doc.description}
                             link={doc.link}
+                            refetch={docs.refetch}
                         />
                     ))}
                     {/* <CardDocumentAdmin
@@ -68,7 +69,7 @@ export default function AdminDashboad() {
             >
                 <RiAddCircleFill />
             </div>
-            {modal && <ModalDocument handleExit={handleExit} />}
+            {modal && <ModalDocument handleExit={handleExit} refetch={docs.refetch} />}
         </>
     );
 }

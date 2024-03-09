@@ -8,23 +8,26 @@ export default function CardDocumentAdmin({
     date = "14 Februari 2024",
     description = "Dokumen ini berisi panduan untuk kegiatan akademik",
     link = "https://docs.google.com/document/d/1uyeYHZDYmIRauOLuYesSFHFc-BqG7iA7gn4t7qnmuhk/edit?usp=sharing",
+    refetch
 }) {
     const handleVerivyDocument = async () => {
         try {
             const res = await verifyDocument(id);
-            toast.info(res.data)
+            refetch();
+            toast.info(res.data);
         } catch (error) {
-            toast.error("failed to verify document " + error)
+            toast.error("failed to verify document " + error);
         }
-    }
+    };
     const handleRejectDocument = async () => {
         try {
             const res = await deleteDocument(id);
-            toast.info(res.data)
+            refetch();
+            toast.info(res.data);
         } catch (error) {
-            toast.error("failed to reject document " + error)
+            toast.error("failed to reject document " + error);
         }
-    }
+    };
     return (
         <div className="flex flex-col items-center justify-between w-[259px] sm:w-[279px] sm:h-[290px] pb-[20px] bg-white rounded-[10px] shadow-md relative">
             <div className="flex flex-col items-start justify-between w-full h-full">

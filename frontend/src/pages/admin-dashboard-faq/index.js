@@ -47,8 +47,8 @@ export default function AdminDashboardFAQ() {
                     </a> */}
                 </div>
                 <div className="flex flex-col items-start justify-start mt-[30px] gap-[20px] relative">
-                    {faqs.map((faq) => (
-                        <FAQItemAdmin key={faq._id.$oid} id={faq._id.$oid} question={faq.question} answer={faq.answer} />
+                    {faqs.data.map((faq) => (
+                        <FAQItemAdmin key={faq._id.$oid} id={faq._id.$oid} question={faq.question} answer={faq.answer} refetch={faqs.refetch} />
                     ))}
                     {/* <FAQItemAdmin
                         question="Apa saja syarat melakukan seminar kerja praktik?"
@@ -72,7 +72,7 @@ export default function AdminDashboardFAQ() {
             >
                 <RiAddCircleFill />
             </div>
-            {modal && <ModalFAQ handleExit={handleExit} />}
+            {modal && <ModalFAQ handleExit={handleExit} refetch={faqs.refetch} />}
         </>
     );
 }

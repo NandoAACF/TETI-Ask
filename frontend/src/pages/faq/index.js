@@ -46,7 +46,7 @@ export default function FAQ() {
                     </a> */}
                 </div>
                 <div className="flex flex-col items-start justify-start mt-[30px] gap-[20px] relative">
-                    {faqs.map((faq) => (
+                    {faqs.data.map((faq) => (
                         <FAQItem key={faq.$oid} question={faq.question} answer={faq.answer} loggedIn={false} />
                     ))}
                     {/* <FAQItem

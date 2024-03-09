@@ -2,22 +2,23 @@ import { postFaq } from "@/services/faqs";
 import Button from "./Button";
 import { toast } from "react-toastify";
 
-export default function ModalFAQ({ handleExit }) {
+export default function ModalFAQ({ handleExit, refetch = () => {}}) {
     const handlePostFAQ = async (e) => {
-        e.preventDefault()
-        const form = e.target
+        e.preventDefault();
+        const form = e.target;
         const faq = {
             question: form.question.value,
             answer: form.answer.value,
-        }
+        };
         try {
             const res = await postFaq(faq);
+            refetch();
             toast.success(res.data);
             handleExit();
         } catch (error) {
             toast.error("failed to post FAQ " + error.message)
-        }
-    }
+        };
+    };
     return (
         <>
             <div className="flex flex-col items-center justify-center bg-opacity-50 bg-black w-full min-h-[100vh] overflow-hidden top-0 left-0 z-50 fixed">

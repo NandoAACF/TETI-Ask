@@ -2,23 +2,24 @@ import { postDocument } from "@/services/document";
 import Button from "./Button";
 import { toast } from "react-toastify";
 
-export default function ModalDocument({ handleExit }) {
+export default function ModalDocument({ handleExit, refetch = () => {}}) {
     const handlePostDocument = async (e) => {
-        e.preventDefault()
-        const form = e.target
+        e.preventDefault();
+        const form = e.target;
         const document = {
             title: form.title.value,
             description: form.description.value,
             link: form.link.value
-        }
+        };
         try {
             const res = await postDocument(document);
+            refetch();
             toast.success(res.data);
-            handleExit()
+            handleExit();
         } catch (error) {
-            toast.error("failed to post document " + error.message)
-        }
-    }
+            toast.error("failed to post document " + error.message);
+        };
+    };
     return (
         <>
             <div className="flex flex-col items-center justify-center bg-opacity-50 bg-black w-full min-h-[100vh] overflow-hidden top-0 left-0 z-50 fixed">

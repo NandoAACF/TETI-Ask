@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import api from "./api";
+import api, { useRefetch } from "./api";
 
 export const useGetVerifiedFaqs = () => {
     const [faqs, setFaqs] = useState([]);
@@ -9,18 +9,19 @@ export const useGetVerifiedFaqs = () => {
             .then((res) => setFaqs(res.data))
             .catch(console.log);
     }, []);
-    return faqs;
+    return {data: faqs};
 };
 
 export const useGetUnverifiedFaqs = () => {
     const [faqs, setFaqs] = useState([]);
+    const {onRefetch, refetch} = useRefetch();
     useEffect(() => {
         api
             .get("/faqs/unverified")
             .then((res) => setFaqs(res.data))
             .catch(console.log);
-    }, []);
-    return faqs;
+    }, [onRefetch]);
+    return {data: faqs, refetch};
 };
 
 export const postFaq = async (faq) => {

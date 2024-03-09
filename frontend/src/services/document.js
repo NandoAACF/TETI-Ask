@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import api from "./api";
+import api, { useRefetch } from "./api";
 
 export const useGetVerifiedDocument = () => {
     const [docs, setDocs] = useState([]);
@@ -9,18 +9,19 @@ export const useGetVerifiedDocument = () => {
             .then((res) => setDocs(res.data))
             .catch(console.log);
     }, []);
-    return docs;
+    return {data: docs};
 };
 
 export const useGetUnverifiedDocument = () => {
     const [docs, setDocs] = useState([]);
+    const {onRefetch, refetch} = useRefetch();
     useEffect(() => {
         api
             .get("/documents/unverified")
             .then((res) => setDocs(res.data))
             .catch(console.log);
-    }, []);
-    return docs;
+    }, [onRefetch]);
+    return {data: docs, refetch};
 };
 
 export const postDocument = async (document) => {
