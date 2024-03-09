@@ -33,3 +33,7 @@ export const useProtectedRoute = () => {
             router.push("/documents")
     }, [admin.loggedIn])
 }
+
+export const register = async ({name, email, password}) => {
+    return api.post("/register", {name, email, password})
+}

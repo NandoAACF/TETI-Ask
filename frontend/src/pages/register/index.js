@@ -1,8 +1,31 @@
 import Button from "@/components/Button";
 import Input from "@/components/Input";
+import { register, useProtectedRoute } from "@/services/admin";
 import { router } from "next/router";
+import { toast } from "react-toastify";
 
 export default function Register() {
+    useProtectedRoute();
+    const handleRegister = async (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const newAdmin = {
+            name: form.name.value,
+            email: form.email.value,
+            password: form.password.value
+        };
+        if(newAdmin.password != form.confirmPassword.value){
+
+        };
+        try {
+            const res = await register(newAdmin);
+            router.replace("/admin-dashboard");
+            toast.info(res.data);
+        }
+        catch (error) {
+            toast.error("Failed to register : " + error.response.data);
+        };
+    }
     return (
         <div className="flex flex-col lg:flex-row items-center justify-center min-h-screen overflow-hidden relative my-[50px] lg:my-0">
             <div className="flex flex-col items-center justify-center w-full h-full lg:ml-[50px] lg:-mt-[40px]">
@@ -18,7 +41,10 @@ export default function Register() {
                 />
             </div>
             <div className="flex flex-col items-center justify-center w-full h-full mt-[40px] md:mt-[40px]">
-                <form className="flex flex-col items-start justify-center w-full h-full gap-[14px] px-[16%] md:px-[18%] relative">
+                <form 
+                    className="flex flex-col items-start justify-center w-full h-full gap-[14px] px-[16%] md:px-[18%] relative"
+                    onSubmit={handleRegister}
+                >
                     <Input label="Name" type="text" className="w-full" name="name" error="nameError" />
                     <Input label="Email" type="email" className="w-full" name="email" error="emailError" />
                     <Input label="Password" type="password" className="w-full" name="password" error="passwordError" />
@@ -26,7 +52,7 @@ export default function Register() {
                         label="Confirm Password"
                         type="password"
                         className="w-full"
-                        name="password"
+                        name="confirmPassword"
                         error="passwordError"
                     />
                     <Button text="Register" type="login" size="md" className="w-full mt-[30px] lg:mt-[40px]" />

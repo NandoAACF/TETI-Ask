@@ -5,6 +5,7 @@ import ModalDocument from "@/components/ModalDocument";
 import Sidebar from "@/components/Sidebar";
 import { useGetUnverifiedDocument } from "@/services/document";
 import { useProtectedRoute } from "@/services/admin";
+import Link from "next/link";
 
 export default function AdminDashboad() {
     useProtectedRoute();
@@ -27,12 +28,12 @@ export default function AdminDashboad() {
                             <option value="organisasi">Organisasi</option>
                         </select>
                     </div>
-                    <a
+                    <Link
                         className="px-[20px] py-[5px] rounded-lg bg-red-600 text-white hover:bg-red-700 active:bg-red-800 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-red-700/[29%]"
                         href="/register"
                     >
                         Add Admin
-                    </a>
+                    </Link>
                 </div>
                 <div className="flex flex-row items-center justify-start mt-[30px] flex-wrap gap-[40px]">
                     {docs.data.map((doc) => (
