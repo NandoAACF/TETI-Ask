@@ -8,8 +8,10 @@ import FAQItem from "@/components/FAQItem";
 import FAQItemAdmin from "@/components/FAQItemAdmin";
 import ModalFAQ from "@/components/ModalFAQ";
 import { useGetUnverifiedFaqs } from "@/services/faqs";
+import { useProtectedRoute } from "@/services/admin";
 
 export default function AdminDashboardFAQ() {
+    useProtectedRoute();
     const [modal, setModal] = useState(false);
     const faqs = useGetUnverifiedFaqs();
     const handleExit = () => {

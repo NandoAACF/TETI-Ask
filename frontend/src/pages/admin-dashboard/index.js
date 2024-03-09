@@ -4,8 +4,10 @@ import { useState } from "react";
 import ModalDocument from "@/components/ModalDocument";
 import Sidebar from "@/components/Sidebar";
 import { useGetUnverifiedDocument } from "@/services/document";
+import { useProtectedRoute } from "@/services/admin";
 
 export default function AdminDashboad() {
+    useProtectedRoute();
     const [modal, setModal] = useState(false);
     const docs = useGetUnverifiedDocument();
     const handleExit = () => {
