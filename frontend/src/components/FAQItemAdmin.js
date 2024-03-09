@@ -17,22 +17,22 @@ export default function FAQItemAdmin({
     const handleVerivyFAQ = async () => {
         try {
             const res = await verifyFAQ(id);
-            toast.info(res.data)
+            toast.info(res.data);
         } catch (error) {
-            toast.error("failed to verify FAQ " + error)
+            toast.error("failed to verify FAQ " + error);
         }
-    }
+    };
     const handleRejectFAQ = async () => {
         try {
             const res = await deleteFAQ(id);
-            toast.info(res.data)
+            toast.info(res.data);
         } catch (error) {
-            toast.error("failed to reject FAQ " + error)
+            toast.error("failed to reject FAQ " + error);
         }
-    }
+    };
     return (
-        <div className="flex flex-col items-start justify-start w-[90%] relative cursor-pointer" onClick={handleExpand}>
-            <div className="flex flex-row items-center justify-between w-full">
+        <div className="flex flex-col items-start justify-start w-[90%] relative">
+            <div className="flex flex-row items-center justify-between w-full cursor-pointer" onClick={handleExpand}>
                 <h4 className="text-[20px] font-semibold">{question}</h4>
                 <IoIosArrowDown
                     className={clsx(
@@ -41,7 +41,11 @@ export default function FAQItemAdmin({
                     )}
                 />
             </div>
-            {expand == true && <h4 className="text-[15px] mt-[8px]">{answer}</h4>}
+            {expand == true && (
+                <h4 className="text-[15px] mt-[8px] cursor-pointer" onClick={handleExpand}>
+                    {answer}
+                </h4>
+            )}
             <div className="flex flex-row items-center justify-start gap-[10px] mt-[15px] w-full">
                 <button
                     className="px-[14px] py-[5px] rounded-lg bg-green-600 text-white hover:bg-green-800 active:bg-green-900 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-[#2471AB]/[29%]"
@@ -60,7 +64,7 @@ export default function FAQItemAdmin({
                     Reject QnA
                 </button>
             </div>
-            <div className="bg-orange-600 w-full h-[3px] mt-[13px]"></div>
+            <div className="bg-orange-600 w-full h-[3px] mt-[13px] cursor-pointer" onClick={handleExpand}></div>
         </div>
     );
 }
