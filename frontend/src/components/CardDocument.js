@@ -40,22 +40,12 @@ export default function CardDocument({
                     </a>
                     {loggedIn && (
                         <>
-                            <a
-                                className="w-full px-[10px] py-[5px] rounded-lg bg-green-600 text-white mt-[11px] hover:bg-green-700 active:bg-green-800 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-green-700/[29%]"
-                                href={link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
+                            <div className="w-full px-[10px] py-[5px] rounded-lg bg-green-600 text-white mt-[11px] hover:bg-green-700 active:bg-green-800 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-green-700/[29%] cursor-pointer">
                                 Edit Document
-                            </a>
-                            <a
-                                className="w-full px-[10px] py-[5px] rounded-lg bg-red-600 text-white mt-[11px] hover:bg-red-700 active:bg-red-800 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-red-700/[29%]"
-                                href={link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
+                            </div>
+                            <div className="w-full px-[10px] py-[5px] rounded-lg bg-red-600 text-white mt-[11px] hover:bg-red-700 active:bg-red-800 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-red-700/[29%] cursor-pointer">
                                 Delete Document
-                            </a>
+                            </div>
                         </>
                     )}
                 </div>

@@ -13,8 +13,8 @@ export default function FAQItem({
         setExpand(!expand);
     };
     return (
-        <div className="flex flex-col items-start justify-start w-[90%] relative cursor-pointer" onClick={handleExpand}>
-            <div className="flex flex-row items-center justify-between w-full">
+        <div className="flex flex-col items-start justify-start w-[90%] relative">
+            <div className="flex flex-row items-center justify-between w-full cursor-pointer" onClick={handleExpand}>
                 <h4 className="text-[20px] font-semibold">{question}</h4>
                 <IoIosArrowDown
                     className={clsx(
@@ -27,26 +27,19 @@ export default function FAQItem({
             {loggedIn && (
                 <>
                     <div className="flex flex-row items-center justify-start gap-[10px] mt-[15px] w-full mb-[5px]">
-                        <a
-                            className="px-[14px] py-[5px] rounded-lg bg-green-600 text-white hover:bg-green-800 active:bg-green-900 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-[#2471AB]/[29%]"
-                            href={link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
+                        <div className="px-[14px] py-[5px] rounded-lg bg-green-600 text-white hover:bg-green-800 active:bg-green-900 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-[#2471AB]/[29%] cursor-pointer">
                             Edit QnA
-                        </a>
-                        <a
-                            className="px-[14px] py-[5px] rounded-lg bg-red-600 text-white hover:bg-red-800 active:bg-red-900 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-[#2471AB]/[29%]"
-                            href={link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
+                        </div>
+                        <div className="px-[14px] py-[5px] rounded-lg bg-red-600 text-white hover:bg-red-800 active:bg-red-900 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-[#2471AB]/[29%] cursor-pointer">
                             Delete QnA
-                        </a>
+                        </div>
                     </div>
                 </>
             )}
-            <div className={clsx("bg-orange-600 w-full h-[3px]", loggedIn ? "mt-[10px]" : "mt-[18px]")}></div>
+            <div
+                className={clsx("bg-orange-600 w-full h-[3px] cursor-pointer", loggedIn ? "mt-[10px]" : "mt-[18px]")}
+                onClick={handleExpand}
+            ></div>
         </div>
     );
 }
