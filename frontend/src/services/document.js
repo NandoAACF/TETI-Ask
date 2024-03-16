@@ -4,6 +4,7 @@ import api, { useRefetch } from "./api";
 export const useGetVerifiedDocument = () => {
     const [docs, setDocs] = useState([]);
     const [category, setCategory] = useState("");
+    const [search, setSearch] = useState("")
     useEffect(() => {
         const endpoint = category
             ? `/documents/category/verified/${category}`
@@ -12,7 +13,11 @@ export const useGetVerifiedDocument = () => {
             .then((res) => setDocs(res.data))
             .catch(console.log);
     }, [category]);
-    return { data: docs, setCategory };
+    const data = !search ? docs : docs.filter(doc => 
+        doc.title.toLowerCase().includes(search.toLowerCase()) ||
+        doc.description.toLowerCase().includes(search.toLowerCase()) 
+    )
+    return { data, setCategory, setSearch };
 };
 
 export const useGetUnverifiedDocument = () => {
