@@ -3,12 +3,16 @@ import api, { useRefetch } from "./api";
 
 export const useGetVerifiedDocument = () => {
     const [docs, setDocs] = useState([]);
+    const [category, setCategory] = useState("");
     useEffect(() => {
-        api.get("/documents/verified")
+        const endpoint = category
+            ? `/documents/category/verified/${category}`
+            : "/documents/verified"
+        api.get(endpoint)
             .then((res) => setDocs(res.data))
             .catch(console.log);
-    }, []);
-    return { data: docs };
+    }, [category]);
+    return { data: docs, setCategory };
 };
 
 export const useGetUnverifiedDocument = () => {
