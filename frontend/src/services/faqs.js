@@ -4,6 +4,7 @@ import api, { useRefetch } from "./api";
 export const useGetVerifiedFaqs = () => {
     const [faqs, setFaqs] = useState([]);
     const [category, setCategory] = useState("");
+    const [search, setSearch] = useState("");
     useEffect(() => {
         const endpoint = category
             ? `/faqs/category/verified/${category}`
@@ -12,7 +13,11 @@ export const useGetVerifiedFaqs = () => {
             .then((res) => setFaqs(res.data))
             .catch(console.log);
     }, [category]);
-    return { data: faqs, setCategory };
+    const data = !search ? faqs : faqs.filter(faq => 
+        faq.question.toLowerCase().includes(search.toLowerCase()) ||
+        faq.answer.toLowerCase().includes(search.toLowerCase()) 
+    );
+    return { data, setCategory, setSearch };
 };
 
 export const useGetUnverifiedFaqs = () => {
