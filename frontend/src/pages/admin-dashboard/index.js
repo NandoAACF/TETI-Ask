@@ -14,6 +14,9 @@ export default function AdminDashboad() {
     const handleExit = () => {
         setModal(false);
     };
+    const handleCategory = (e) => {
+        docs.setCategory(e.target.value);
+    }
     return (
         <>
             <Sidebar activeIcon="admin-dashboard" />
@@ -22,8 +25,8 @@ export default function AdminDashboad() {
                 <div className="flex flex-col md:flex-row items-start md:items-center justify-start mt-[20px] gap-x-[20px] gap-y-[20px] md:gap-x-[35px] md:gap-y-[25px] md:flex-wrap">
                     <div className="flex flex-row items-center justify-start gap-[15px]">
                         <h4 className="text-[17px] font-medium text-left">Category:</h4>
-                        <select className="bg-white border-[1px] border-slate-300 rounded-[10px] w-[125px] sm:w-[150px] py-[5px] px-[7px] mt-[2px] hover:bg-white cursor-pointer outline-none transition-all ease-in-out duration-200">
-                            <option value="all">All</option>
+                        <select onChange={handleCategory} className="bg-white border-[1px] border-slate-300 rounded-[10px] w-[125px] sm:w-[150px] py-[5px] px-[7px] mt-[2px] hover:bg-white cursor-pointer outline-none transition-all ease-in-out duration-200">
+                            <option value="">All</option>
                             <option value="akademik">Akademik</option>
                             <option value="organisasi">Organisasi</option>
                         </select>

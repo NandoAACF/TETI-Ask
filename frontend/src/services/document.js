@@ -17,13 +17,17 @@ export const useGetVerifiedDocument = () => {
 
 export const useGetUnverifiedDocument = () => {
     const [docs, setDocs] = useState([]);
-    const { onRefetch, refetch } = useRefetch();
+    const [category, setCategory] = useState("");
+    const {onRefetch, refetch} = useRefetch();
     useEffect(() => {
-        api.get("/documents/unverified")
+        const endpoint = category
+            ? `/documents/category/unverified/${category}`
+            : "/documents/unverified"
+        api.get(endpoint)
             .then((res) => setDocs(res.data))
             .catch(console.log);
-    }, [onRefetch]);
-    return { data: docs, refetch };
+    }, [onRefetch, category]);
+    return { data: docs, refetch, setCategory };
 };
 
 export const postDocument = async (document) => {
