@@ -3,23 +3,31 @@ import api, { useRefetch } from "./api";
 
 export const useGetVerifiedFaqs = () => {
     const [faqs, setFaqs] = useState([]);
+    const [category, setCategory] = useState("");
     useEffect(() => {
-        api.get("/faqs/verified")
+        const endpoint = category
+            ? `/faqs/category/verified/${category}`
+            : "/faqs/verified"
+        api.get(endpoint)
             .then((res) => setFaqs(res.data))
             .catch(console.log);
-    }, []);
-    return { data: faqs };
+    }, [category]);
+    return { data: faqs, setCategory };
 };
 
 export const useGetUnverifiedFaqs = () => {
     const [faqs, setFaqs] = useState([]);
-    const { onRefetch, refetch } = useRefetch();
+    const [category, setCategory] = useState("");
+    const {onRefetch, refetch} = useRefetch();
     useEffect(() => {
-        api.get("/faqs/unverified")
+        const endpoint = category
+            ? `/faqs/category/unverified/${category}`
+            : "/faqs/unverified"
+        api.get(endpoint)
             .then((res) => setFaqs(res.data))
             .catch(console.log);
-    }, [onRefetch]);
-    return { data: faqs, refetch };
+    }, [onRefetch, category]);
+    return { data: faqs, refetch, setCategory };
 };
 
 export const postFaq = async (faq) => {
