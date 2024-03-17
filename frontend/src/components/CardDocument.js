@@ -10,7 +10,8 @@ export default function CardDocument({
     description = "Dokumen ini berisi panduan untuk kegiatan akademik",
     link = "https://docs.google.com/document/d/1uyeYHZDYmIRauOLuYesSFHFc-BqG7iA7gn4t7qnmuhk/edit?usp=sharing",
     loggedIn = false,
-    refetch
+    refetch,
+    handleEdit
 }) {
     const handleDeleteDocument = async () => {
         try {
@@ -53,9 +54,9 @@ export default function CardDocument({
                     </a>
                     {loggedIn && (
                         <>
-                            <div className="w-full px-[10px] py-[5px] rounded-lg bg-green-600 text-white mt-[11px] hover:bg-green-700 active:bg-green-800 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-green-700/[29%] cursor-pointer">
+                            <button onClick={handleEdit} className="w-full px-[10px] py-[5px] rounded-lg bg-green-600 text-white mt-[11px] hover:bg-green-700 active:bg-green-800 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-green-700/[29%] cursor-pointer">
                                 Edit Document
-                            </div>
+                            </button>
                             <button onClick={handleDeleteDocument} className="w-full px-[10px] py-[5px] rounded-lg bg-red-600 text-white mt-[11px] hover:bg-red-700 active:bg-red-800 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-red-700/[29%] cursor-pointer">
                                 Delete Document
                             </button>

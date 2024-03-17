@@ -5,9 +5,11 @@ import ModalDocument from "@/components/ModalDocument";
 import Sidebar from "@/components/Sidebar";
 import { useGetVerifiedDocument } from "@/services/document";
 import { useAdmin } from "@/services/admin";
+import ModalEditDocument from "@/components/ModalEditDocument";
 
 export default function Document() {
     const [modal, setModal] = useState(false);
+    const [editIdx, setEditIdx] = useState(0);
     const docs = useGetVerifiedDocument();
     const admin = useAdmin();
     const handleExit = () => {
@@ -19,6 +21,12 @@ export default function Document() {
     const handleSearch = (e) => {
         docs.setSearch(e.target.value);
     };
+    const handleEdit = (id) => () => {
+        setEditIdx(id);
+    }
+    const handleExitEdit = () => {
+        setEditIdx(null);
+    }
     return (
         <>
             <Sidebar activeIcon="documents" />
@@ -52,7 +60,7 @@ export default function Document() {
                     </a>
                 </div>
                 <div className="flex flex-row items-center justify-start mt-[30px] flex-wrap gap-[40px]">
-                    {docs.data.map((doc) => (
+                    {docs.data.map((doc, index) => (
                         <CardDocument
                             id={doc._id.$oid}
                             key={doc._id.$oid}
@@ -63,6 +71,7 @@ export default function Document() {
                             link={doc.link}
                             loggedIn={admin.loggedIn}
                             refetch={docs.refetch}
+                            handleEdit={handleEdit(index)}
                         />
                     ))}
                     {/* <CardDocument
@@ -90,6 +99,7 @@ export default function Document() {
                 <RiAddCircleFill />
             </div>
             {modal && <ModalDocument handleExit={handleExit} />}
+            {docs.data.length && editIdx != null && <ModalEditDocument handleExit={handleExitEdit} _document={docs.data[editIdx]} refetch={docs.refetch} />}
         </>
     );
 }

@@ -20,7 +20,7 @@ export const useGetDocument = (status = "verified") => {
         doc.title.toLowerCase().includes(search.toLowerCase()) ||
         doc.description.toLowerCase().includes(search.toLowerCase()) 
     );
-    
+
     return { data, refetch, setCategory, setSearch };
 };
 
@@ -38,6 +38,14 @@ export const postDocument = async (document) => {
         status: "unverified",
     };
     return api.post("/document", payload);
+};
+
+export const updateDocument = async (id, document) => {
+    const payload = {
+        ...document,
+        status: "verified",
+    };
+    return api.put(`/document/${id}`, payload);
 };
 
 export const verifyDocument = async (id) => {
