@@ -9,7 +9,7 @@ import ModalEditDocument from "@/components/ModalEditDocument";
 
 export default function Document() {
     const [modal, setModal] = useState(false);
-    const [editIdx, setEditIdx] = useState(0);
+    const [editIdx, setEditIdx] = useState(null);
     const docs = useGetVerifiedDocument();
     const admin = useAdmin();
     const handleExit = () => {

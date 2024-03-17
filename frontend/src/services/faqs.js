@@ -40,6 +40,14 @@ export const postFaq = async (faq) => {
     return api.post("/faq", payload);
 };
 
+export const updateFaq = async (id, faq) => {
+    const payload = {
+        ...faq,
+        status: "verified",
+    };
+    return api.put(`/faq/${id}`, payload);
+};
+
 export const verifyFAQ = async (id) => {
     return api.put(`/faq/verify/${id}`);
 };

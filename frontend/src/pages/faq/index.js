@@ -8,9 +8,11 @@ import FAQItem from "@/components/FAQItem";
 import ModalFAQ from "@/components/ModalFAQ";
 import { useGetVerifiedFaqs } from "@/services/faqs";
 import { useAdmin } from "@/services/admin";
+import ModalEditFAQ from "@/components/ModalEditFAQ";
 
 export default function FAQ() {
     const [modal, setModal] = useState(false);
+    const [editIdx, setEditIdx] = useState(null);
     const faqs = useGetVerifiedFaqs();
     const admin = useAdmin();
     const handleExit = () => {
@@ -22,6 +24,12 @@ export default function FAQ() {
     const handleSearch = (e) => {
         faqs.setSearch(e.target.value);
     };
+    const handleEdit = (id) => () => {
+        setEditIdx(id);
+    }
+    const handleExitEdit = () => {
+        setEditIdx(null);
+    }
     return (
         <>
             <Sidebar activeIcon="faq" />
@@ -55,8 +63,8 @@ export default function FAQ() {
                     </a> */}
                 </div>
                 <div className="flex flex-col items-start justify-start mt-[30px] gap-[20px] relative">
-                    {faqs.data.map((faq) => (
-                        <FAQItem id={faq._id.$oid} key={faq._id.$oid} question={faq.question} answer={faq.answer} loggedIn={admin.loggedIn} refetch={faqs.refetch} />
+                    {faqs.data.map((faq, index) => (
+                        <FAQItem id={faq._id.$oid} key={faq._id.$oid} question={faq.question} answer={faq.answer} loggedIn={admin.loggedIn} refetch={faqs.refetch} handleEdit={handleEdit(index)} />
                     ))}
                     {/* <FAQItem
                         question="Apa saja syarat melakukan seminar kerja praktik?"
@@ -81,6 +89,7 @@ export default function FAQ() {
                 <RiAddCircleFill />
             </div>
             {modal && <ModalFAQ handleExit={handleExit} />}
+            {faqs.data.length && editIdx != null && <ModalEditFAQ handleExit={handleExitEdit} _faq={faqs.data[editIdx]} refetch={faqs.refetch} />}
         </>
     );
 }
