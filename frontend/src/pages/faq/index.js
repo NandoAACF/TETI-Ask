@@ -56,7 +56,7 @@ export default function FAQ() {
                 </div>
                 <div className="flex flex-col items-start justify-start mt-[30px] gap-[20px] relative">
                     {faqs.data.map((faq) => (
-                        <FAQItem key={faq.$oid} question={faq.question} answer={faq.answer} loggedIn={admin.loggedIn} />
+                        <FAQItem id={faq._id.$oid} key={faq._id.$oid} question={faq.question} answer={faq.answer} loggedIn={admin.loggedIn} refetch={faqs.refetch} />
                     ))}
                     {/* <FAQItem
                         question="Apa saja syarat melakukan seminar kerja praktik?"

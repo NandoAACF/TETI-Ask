@@ -1,16 +1,28 @@
+import { deleteFAQ } from "@/services/faqs";
 import clsx from "clsx";
 import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
+import { toast } from "react-toastify";
 
 export default function FAQItem({
+    id,
     question = "Apa saja syarat melakukan seminar kerja praktik?",
     answer = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut laboreet dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est laborum.",
-    link = "https://www.google.com",
     loggedIn = false,
+    refetch
 }) {
     const [expand, setExpand] = useState(false);
     const handleExpand = () => {
         setExpand(!expand);
+    };
+    const handleDeleteFAQ = async () => {
+        try {
+            const res = await deleteFAQ(id);
+            refetch();
+            toast.info(res.data);
+        } catch (error) {
+            toast.error("failed to reject document " + error);
+        }
     };
     return (
         <div className="flex flex-col items-start justify-start w-[90%] relative">
@@ -30,9 +42,9 @@ export default function FAQItem({
                         <div className="px-[14px] py-[5px] rounded-lg bg-green-600 text-white hover:bg-green-800 active:bg-green-900 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-[#2471AB]/[29%] cursor-pointer">
                             Edit QnA
                         </div>
-                        <div className="px-[14px] py-[5px] rounded-lg bg-red-600 text-white hover:bg-red-800 active:bg-red-900 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-[#2471AB]/[29%] cursor-pointer">
+                        <button onClick={handleDeleteFAQ} className="px-[14px] py-[5px] rounded-lg bg-red-600 text-white hover:bg-red-800 active:bg-red-900 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-[#2471AB]/[29%] cursor-pointer">
                             Delete QnA
-                        </div>
+                        </button>
                     </div>
                 </>
             )}
