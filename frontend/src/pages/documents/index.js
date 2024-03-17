@@ -54,13 +54,15 @@ export default function Document() {
                 <div className="flex flex-row items-center justify-start mt-[30px] flex-wrap gap-[40px]">
                     {docs.data.map((doc) => (
                         <CardDocument
+                            id={doc._id.$oid}
                             key={doc._id.$oid}
                             title={doc.title}
                             category={doc.category}
                             date={doc.date}
                             description={doc.description}
                             link={doc.link}
-                            loggedIn={admin.loggedIn} // Nanti kalau admin login, tolong ini dibikin otomatis berubah ke true ya
+                            loggedIn={admin.loggedIn}
+                            refetch={docs.refetch}
                         />
                     ))}
                     {/* <CardDocument

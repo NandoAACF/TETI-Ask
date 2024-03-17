@@ -1,13 +1,26 @@
+import { deleteDocument } from "@/services/document";
 import clsx from "clsx";
+import { toast } from "react-toastify";
 
 export default function CardDocument({
+    id,
     title = "Buku Panduan",
     category = "Akademik",
     date = "14 Februari 2024",
     description = "Dokumen ini berisi panduan untuk kegiatan akademik",
     link = "https://docs.google.com/document/d/1uyeYHZDYmIRauOLuYesSFHFc-BqG7iA7gn4t7qnmuhk/edit?usp=sharing",
     loggedIn = false,
+    refetch
 }) {
+    const handleDeleteDocument = async () => {
+        try {
+            const res = await deleteDocument(id);
+            refetch();
+            toast.info(res.data);
+        } catch (error) {
+            toast.error("failed to delete document " + error);
+        }
+    };
     return (
         <div
             className={clsx(
@@ -43,9 +56,9 @@ export default function CardDocument({
                             <div className="w-full px-[10px] py-[5px] rounded-lg bg-green-600 text-white mt-[11px] hover:bg-green-700 active:bg-green-800 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-green-700/[29%] cursor-pointer">
                                 Edit Document
                             </div>
-                            <div className="w-full px-[10px] py-[5px] rounded-lg bg-red-600 text-white mt-[11px] hover:bg-red-700 active:bg-red-800 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-red-700/[29%] cursor-pointer">
+                            <button onClick={handleDeleteDocument} className="w-full px-[10px] py-[5px] rounded-lg bg-red-600 text-white mt-[11px] hover:bg-red-700 active:bg-red-800 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-red-700/[29%] cursor-pointer">
                                 Delete Document
-                            </div>
+                            </button>
                         </>
                     )}
                 </div>
