@@ -73,7 +73,7 @@ export default function ModalEditDocument({ _document, handleExit, refetch = () 
                                 className="order-2 sm:order-1"
                                 onClick={handleExit}
                             />
-                            <Button text="Edit Document" type="primary" size="sm" className="order-1 sm:order-2" />
+                            <Button text="Edit Document" type="primary3" size="sm" className="order-1 sm:order-2" />
                         </div>
                     </form>
                 </div>

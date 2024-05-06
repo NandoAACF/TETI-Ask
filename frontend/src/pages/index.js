@@ -57,14 +57,14 @@ export default function Documents() {
                             className="border-[1px] border-slate-300 rounded-[10px] w-[145px] sm:w-[200px] py-[5px] px-[9px] mt-[2px] hover:bg-white outline-none transition-all ease-in-out duration-300 focus:ring-[3px] focus:ring-red-500"
                         />
                     </div>
-                    <a
+                    {/* <a
                         className="px-[20px] py-[5px] rounded-lg bg-red-600 text-white hover:bg-red-700 active:bg-red-800 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-red-700/[29%]"
                         href=""
                         target="_blank"
                         rel="noopener noreferrer"
                     >
                         Apply
-                    </a>
+                    </a> */}
                 </div>
                 <div className="flex flex-row items-center justify-start mt-[30px] flex-wrap gap-[40px]">
                     {docs.data.map((doc, index) => (

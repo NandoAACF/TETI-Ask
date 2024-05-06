@@ -63,7 +63,7 @@ export default function ModalEditFAQ({ _faq, handleExit, refetch = () => {} }) {
                                 className="order-2 sm:order-1"
                                 onClick={handleExit}
                             />
-                            <Button text="Submit QnA" type="primary2" size="sm" className="order-1 sm:order-2" />
+                            <Button text="Edit QnA" type="primary3" size="sm" className="order-1 sm:order-2" />
                         </div>
                     </form>
                 </div>

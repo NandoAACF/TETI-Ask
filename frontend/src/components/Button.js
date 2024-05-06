@@ -29,6 +29,8 @@ export default function Button({
             return `text-white bg-red-600 hover:bg-red-700 active:bg-red-800 hover:shadow-lg hover:shadow-red-700/[29%] hover:-translate-y-[6px]`;
         if (type === "primary2")
             return `text-white bg-orange-600 hover:bg-orange-700 active:bg-orange-800 hover:shadow-lg hover:shadow-orange-700/[29%] hover:-translate-y-[6px]`;
+        if (type === "primary3")
+            return `text-white bg-green-600 hover:bg-green-700 active:bg-green-800 hover:shadow-lg hover:shadow-green-700/[29%] hover:-translate-y-[6px]`;
         if (type === "login")
             return `text-white bg-red-600 hover:bg-red-700 active:bg-red-800 hover:shadow-lg hover:shadow-red-700/[29%] hover:-translate-y-[6px]`;
         if (type === "secondary")
