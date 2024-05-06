@@ -10,7 +10,7 @@ export default function FAQItem({
     answer = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut laboreet dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est laborum.",
     loggedIn = false,
     refetch,
-    handleEdit
+    handleEdit,
 }) {
     const [expand, setExpand] = useState(false);
     const handleExpand = () => {
@@ -20,9 +20,9 @@ export default function FAQItem({
         try {
             const res = await deleteFAQ(id);
             refetch();
-            toast.info(res.data);
+            toast.success(res.data);
         } catch (error) {
-            toast.error("failed to reject document " + error);
+            toast.error("Failed to reject document " + error);
         }
     };
     return (
@@ -40,10 +40,16 @@ export default function FAQItem({
             {loggedIn && (
                 <>
                     <div className="flex flex-row items-center justify-start gap-[10px] mt-[15px] w-full mb-[5px]">
-                        <button onClick={handleEdit} className="px-[14px] py-[5px] rounded-lg bg-green-600 text-white hover:bg-green-800 active:bg-green-900 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-[#2471AB]/[29%] cursor-pointer">
+                        <button
+                            onClick={handleEdit}
+                            className="px-[14px] py-[5px] rounded-lg bg-green-600 text-white hover:bg-green-800 active:bg-green-900 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-[#2471AB]/[29%] cursor-pointer"
+                        >
                             Edit QnA
                         </button>
-                        <button onClick={handleDeleteFAQ} className="px-[14px] py-[5px] rounded-lg bg-red-600 text-white hover:bg-red-800 active:bg-red-900 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-[#2471AB]/[29%] cursor-pointer">
+                        <button
+                            onClick={handleDeleteFAQ}
+                            className="px-[14px] py-[5px] rounded-lg bg-red-600 text-white hover:bg-red-800 active:bg-red-900 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-[#2471AB]/[29%] cursor-pointer"
+                        >
                             Delete QnA
                         </button>
                     </div>

@@ -18,7 +18,7 @@ export default function ModalEditDocument({ _document, handleExit, refetch = () 
             toast.success(res.data);
             handleExit();
         } catch (error) {
-            toast.error("failed to update document " + error.message);
+            toast.error("Failed to update document " + error.message);
         }
     };
     return (

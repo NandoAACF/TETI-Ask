@@ -17,7 +17,7 @@ export default function ModalEditFAQ({ _faq, handleExit, refetch = () => {} }) {
             toast.success(res.data);
             handleExit();
         } catch (error) {
-            toast.error("failed to update FAQ " + error.message);
+            toast.error("Failed to update FAQ " + error.message);
         }
     };
     return (

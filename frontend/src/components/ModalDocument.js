@@ -18,7 +18,7 @@ export default function ModalDocument({ handleExit, refetch = () => {} }) {
             toast.success(res.data);
             handleExit();
         } catch (error) {
-            toast.error("failed to post document " + error.message);
+            toast.error("Failed to post document " + error.message);
         }
     };
     return (

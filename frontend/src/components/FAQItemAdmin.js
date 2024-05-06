@@ -9,7 +9,7 @@ export default function FAQItemAdmin({
     question = "Apa saja syarat melakukan seminar kerja praktik?",
     answer = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut laboreet dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est laborum.",
     link = "https://www.google.com",
-    refetch
+    refetch,
 }) {
     const [expand, setExpand] = useState(false);
     const handleExpand = () => {
@@ -19,18 +19,18 @@ export default function FAQItemAdmin({
         try {
             const res = await verifyFAQ(id);
             refetch();
-            toast.info(res.data);
+            toast.success(res.data);
         } catch (error) {
-            toast.error("failed to verify FAQ " + error);
+            toast.error("Failed to verify FAQ " + error);
         }
     };
     const handleRejectFAQ = async () => {
         try {
             const res = await deleteFAQ(id);
             refetch();
-            toast.info(res.data);
+            toast.success(res.data);
         } catch (error) {
-            toast.error("failed to reject FAQ " + error);
+            toast.error("Failed to reject FAQ " + error);
         }
     };
     return (

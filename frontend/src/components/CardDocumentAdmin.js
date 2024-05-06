@@ -8,24 +8,24 @@ export default function CardDocumentAdmin({
     date = "14 Februari 2024",
     description = "Dokumen ini berisi panduan untuk kegiatan akademik",
     link = "https://docs.google.com/document/d/1uyeYHZDYmIRauOLuYesSFHFc-BqG7iA7gn4t7qnmuhk/edit?usp=sharing",
-    refetch
+    refetch,
 }) {
     const handleVerivyDocument = async () => {
         try {
             const res = await verifyDocument(id);
             refetch();
-            toast.info(res.data);
+            toast.success(res.data);
         } catch (error) {
-            toast.error("failed to verify document " + error);
+            toast.error("Failed to verify document " + error);
         }
     };
     const handleRejectDocument = async () => {
         try {
             const res = await deleteDocument(id);
             refetch();
-            toast.info(res.data);
+            toast.success(res.data);
         } catch (error) {
-            toast.error("failed to reject document " + error);
+            toast.error("Failed to reject document " + error);
         }
     };
     return (

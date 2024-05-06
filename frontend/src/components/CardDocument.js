@@ -11,15 +11,15 @@ export default function CardDocument({
     link = "https://docs.google.com/document/d/1uyeYHZDYmIRauOLuYesSFHFc-BqG7iA7gn4t7qnmuhk/edit?usp=sharing",
     loggedIn = false,
     refetch,
-    handleEdit
+    handleEdit,
 }) {
     const handleDeleteDocument = async () => {
         try {
             const res = await deleteDocument(id);
             refetch();
-            toast.info(res.data);
+            toast.success(res.data);
         } catch (error) {
-            toast.error("failed to delete document " + error);
+            toast.error("Failed to delete document " + error);
         }
     };
     return (
@@ -54,10 +54,16 @@ export default function CardDocument({
                     </a>
                     {loggedIn && (
                         <>
-                            <button onClick={handleEdit} className="w-full px-[10px] py-[5px] rounded-lg bg-green-600 text-white mt-[11px] hover:bg-green-700 active:bg-green-800 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-green-700/[29%] cursor-pointer">
+                            <button
+                                onClick={handleEdit}
+                                className="w-full px-[10px] py-[5px] rounded-lg bg-green-600 text-white mt-[11px] hover:bg-green-700 active:bg-green-800 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-green-700/[29%] cursor-pointer"
+                            >
                                 Edit Document
                             </button>
-                            <button onClick={handleDeleteDocument} className="w-full px-[10px] py-[5px] rounded-lg bg-red-600 text-white mt-[11px] hover:bg-red-700 active:bg-red-800 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-red-700/[29%] cursor-pointer">
+                            <button
+                                onClick={handleDeleteDocument}
+                                className="w-full px-[10px] py-[5px] rounded-lg bg-red-600 text-white mt-[11px] hover:bg-red-700 active:bg-red-800 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-red-700/[29%] cursor-pointer"
+                            >
                                 Delete Document
                             </button>
                         </>

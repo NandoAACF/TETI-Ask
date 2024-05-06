@@ -17,7 +17,7 @@ export default function ModalFAQ({ handleExit, refetch = () => {} }) {
             toast.success(res.data);
             handleExit();
         } catch (error) {
-            toast.error("failed to post FAQ " + error.message);
+            toast.error("Failed to post FAQ " + error.message);
         }
     };
     return (
