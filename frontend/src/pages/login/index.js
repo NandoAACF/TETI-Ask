@@ -18,7 +18,7 @@ export default function Login() {
         };
         try {
             const res = await admin.login(credentials);
-            router.replace("/documents");
+            router.replace("/");
             toast.success(res.data);
         } catch (error) {
             toast.error("Failed to login : " + error.response.data);

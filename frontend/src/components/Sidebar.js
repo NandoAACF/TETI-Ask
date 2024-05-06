@@ -31,7 +31,7 @@ export default function Sidebar({ activeIcon }) {
                 )}
             >
                 <div className="flex flex-row sm:flex-col items-center sm:items-start justify-start gap-[11px] sm:gap-[20px] sm:mt-[30px]">
-                    <Link href="/chatbot">
+                    <Link href="https://teti-ask-chatbot.streamlit.app/">
                         <div
                             className={`text-[24px] sm:text-[32px] transition-all ease-in-out duration-200 hover:scale-110 rounded-lg p-[8px] sm:p-[15px] cursor-pointer
                         ${activeIcon === "chatbot" ? "bg-red-900" : "hover:bg-red-800 active:bg-red-800"}`}
@@ -39,7 +39,7 @@ export default function Sidebar({ activeIcon }) {
                             <TbMessageChatbot color="white" />
                         </div>
                     </Link>
-                    <Link href="/documents">
+                    <Link href="/">
                         <div
                             className={`text-[24px] sm:text-[30px] transition-all ease-in-out duration-200 hover:scale-110 rounded-lg p-[8px] sm:p-[15px] cursor-pointer
                         ${activeIcon === "documents" ? "bg-red-900" : "hover:bg-red-800 active:bg-red-800"}`}

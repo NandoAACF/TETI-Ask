@@ -1,6 +1,6 @@
-import React, { createContext, useState, useContext, useEffect } from 'react';
-import api from './api';
-import { useRouter } from 'next/router';
+import React, { createContext, useState, useContext, useEffect } from "react";
+import api from "./api";
+import { useRouter } from "next/router";
 
 const AdminContext = createContext();
 
@@ -10,17 +10,13 @@ export const AdminProvider = ({ children }) => {
     const login = async (credentials) => {
         const res = await api.post("/login", credentials);
         setLoggedIn(true);
-        return res
+        return res;
     };
     const logout = () => {
         setLoggedIn(false);
     };
 
-    return (
-        <AdminContext.Provider value={{ loggedIn, login, logout }}>
-            {children}
-        </AdminContext.Provider>
-    );
+    return <AdminContext.Provider value={{ loggedIn, login, logout }}>{children}</AdminContext.Provider>;
 };
 
 export const useAdmin = () => useContext(AdminContext);
@@ -28,12 +24,11 @@ export const useAdmin = () => useContext(AdminContext);
 export const useProtectedRoute = () => {
     const admin = useAdmin();
     const router = useRouter();
-    useEffect(()=>{
-        if(!admin.loggedIn)
-            router.push("/documents")
-    }, [admin.loggedIn])
-}
+    useEffect(() => {
+        if (!admin.loggedIn) router.push("/");
+    }, [admin.loggedIn]);
+};
 
-export const register = async ({name, email, password}) => {
-    return api.post("/register", {name, email, password})
-}
+export const register = async ({ name, email, password }) => {
+    return api.post("/register", { name, email, password });
+};
