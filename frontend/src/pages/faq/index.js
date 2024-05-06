@@ -9,6 +9,7 @@ import ModalFAQ from "@/components/ModalFAQ";
 import { useGetVerifiedFaqs } from "@/services/faqs";
 import { useAdmin } from "@/services/admin";
 import ModalEditFAQ from "@/components/ModalEditFAQ";
+import Head from "next/head";
 
 export default function FAQ() {
     const [modal, setModal] = useState(false);
@@ -26,19 +27,25 @@ export default function FAQ() {
     };
     const handleEdit = (id) => () => {
         setEditIdx(id);
-    }
+    };
     const handleExitEdit = () => {
         setEditIdx(null);
-    }
+    };
     return (
         <>
+            <Head>
+                <title>FAQ - TETI Ask</title>
+            </Head>
             <Sidebar activeIcon="faq" />
             <div className="flex flex-col justify-start min-h-screen bg-slate-50 pt-[80px] sm:pt-[30px] pb-[30px] pr-[27px] sm:pr-[50px] pl-[40px] sm:pl-[153px] body">
                 <h3 className="text-[34px] sm:text-[40px] font-bold text-left">FAQ</h3>
                 <div className="flex flex-col md:flex-row items-start md:items-center justify-start mt-[20px] gap-x-[20px] gap-y-[20px] md:gap-x-[35px] md:gap-y-[25px] md:flex-wrap">
                     <div className="flex flex-row items-center justify-start gap-[15px]">
                         <h4 className="text-[17px] font-medium text-left">Category:</h4>
-                        <select onChange={handleCategory} className="bg-white border-[1px] border-slate-300 rounded-[10px] w-[125px] sm:w-[150px] py-[5px] px-[7px] mt-[2px] hover:bg-white cursor-pointer outline-none transition-all ease-in-out duration-200">
+                        <select
+                            onChange={handleCategory}
+                            className="bg-white border-[1px] border-slate-300 rounded-[10px] w-[125px] sm:w-[150px] py-[5px] px-[7px] mt-[2px] hover:bg-white cursor-pointer outline-none transition-all ease-in-out duration-200"
+                        >
                             <option value="">All</option>
                             <option value="akademik">Akademik</option>
                             <option value="organisasi">Organisasi</option>
@@ -64,7 +71,15 @@ export default function FAQ() {
                 </div>
                 <div className="flex flex-col items-start justify-start mt-[30px] gap-[20px] relative">
                     {faqs.data.map((faq, index) => (
-                        <FAQItem id={faq._id.$oid} key={faq._id.$oid} question={faq.question} answer={faq.answer} loggedIn={admin.loggedIn} refetch={faqs.refetch} handleEdit={handleEdit(index)} />
+                        <FAQItem
+                            id={faq._id.$oid}
+                            key={faq._id.$oid}
+                            question={faq.question}
+                            answer={faq.answer}
+                            loggedIn={admin.loggedIn}
+                            refetch={faqs.refetch}
+                            handleEdit={handleEdit(index)}
+                        />
                     ))}
                     {/* <FAQItem
                         question="Apa saja syarat melakukan seminar kerja praktik?"
@@ -89,7 +104,9 @@ export default function FAQ() {
                 <RiAddCircleFill />
             </div>
             {modal && <ModalFAQ handleExit={handleExit} />}
-            {faqs.data.length && editIdx != null && <ModalEditFAQ handleExit={handleExitEdit} _faq={faqs.data[editIdx]} refetch={faqs.refetch} />}
+            {faqs.data.length && editIdx != null && (
+                <ModalEditFAQ handleExit={handleExitEdit} _faq={faqs.data[editIdx]} refetch={faqs.refetch} />
+            )}
         </>
     );
 }
