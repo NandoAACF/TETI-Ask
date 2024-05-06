@@ -1,16 +1,16 @@
 import axios from "axios";
 import { useState } from "react";
 
-export const API_URL = "http://localhost:5000/api";
+export const API_URL = "http://teti-ask-be.vercel.app/api";
 
 const api = axios.create({
-    baseURL: API_URL
-})
+    baseURL: API_URL,
+});
 
 export const useRefetch = () => {
     const [onRefetch, setRefetch] = useState(false);
     const refetch = () => setRefetch(!onRefetch);
-    return {onRefetch, refetch}
-}
+    return { onRefetch, refetch };
+};
 
 export default api;
