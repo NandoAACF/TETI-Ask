@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 
-export const API_URL = "http://teti-ask-be.vercel.app/api";
+export const API_URL = "https://teti-ask-be.vercel.app/api";
 
 const api = axios.create({
     baseURL: API_URL,
