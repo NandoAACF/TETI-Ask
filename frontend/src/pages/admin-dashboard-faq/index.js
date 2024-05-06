@@ -10,6 +10,7 @@ import ModalFAQ from "@/components/ModalFAQ";
 import { useGetUnverifiedFaqs } from "@/services/faqs";
 import { useProtectedRoute } from "@/services/admin";
 import Head from "next/head";
+import Link from "next/link";
 
 export default function AdminDashboardFAQ() {
     useProtectedRoute();
@@ -49,6 +50,12 @@ export default function AdminDashboardFAQ() {
                             className="border-[1px] border-slate-300 rounded-[10px] w-[145px] sm:w-[200px] py-[5px] px-[9px] mt-[2px] hover:bg-white outline-none transition-all ease-in-out duration-300 focus:ring-[3px] focus:ring-orange-500"
                         />
                     </div>
+                    <Link
+                        className="px-[20px] py-[5px] rounded-lg bg-orange-600 text-white hover:bg-orange-700 active:bg-orange-800 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-red-700/[29%]"
+                        href="/register"
+                    >
+                        Add Admin
+                    </Link>
                     {/* <a
                         className="px-[20px] py-[5px] rounded-lg bg-orange-600 text-white hover:bg-orange-700 active:bg-orange-800 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-orange-700/[29%]"
                         href=""
