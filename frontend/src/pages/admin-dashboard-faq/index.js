@@ -59,6 +59,7 @@ export default function AdminDashboardFAQ() {
                         Apply
                     </a> */}
                 </div>
+                <img className={`mx-auto mt-8 ${!faqs.loading && 'hidden'}`} src="/assets/images/loading.gif" alt="loading" width={80} />
                 <div className="flex flex-col items-start justify-start mt-[30px] gap-[20px] relative">
                     {faqs.data.map((faq) => (
                         <FAQItemAdmin

@@ -6,14 +6,17 @@ export const useGetDocument = (status = "verified") => {
     const [category, setCategory] = useState("");
     const [search, setSearch] = useState("");
     const {onRefetch, refetch} = useRefetch();
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        setLoading(true);
         const endpoint = category
             ? `/documents/category/${status}/${category}`
             : `/documents/${status}`
         api.get(endpoint)
             .then((res) => setDocs(res.data))
-            .catch(console.log);
+            .catch(console.log)
+            .finally(() => setLoading(false));
     }, [onRefetch, category]);
 
     const data = !search ? docs : docs.filter(doc => 
@@ -21,7 +24,7 @@ export const useGetDocument = (status = "verified") => {
         doc.description.toLowerCase().includes(search.toLowerCase()) 
     );
 
-    return { data, refetch, setCategory, setSearch };
+    return { data, refetch, setCategory, setSearch, loading };
 };
 
 export const useGetUnverifiedDocument = () => {
