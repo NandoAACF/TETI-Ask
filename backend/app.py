@@ -98,6 +98,12 @@ def update_document(id):
         return resp
     else:
         return not_found()
+    
+@app.route('/api/documents/categories', methods=['GET'])
+def get_document_categories():
+    categories = documents.distinct('category')
+    resp = dumps(categories)
+    return resp
 
 @app.route('/api/documents/category/verified/<category>', methods=['GET'])
 def documents_filter_verified(category):
@@ -230,6 +236,12 @@ def update_faq(id):
         return resp
     else:
         return not_found()
+    
+@app.route('/api/faq/categories', methods=['GET'])
+def get_categories():
+    categories = faqs.distinct('category')
+    resp = dumps(categories)
+    return resp
     
 @app.route('/api/faqs/category/verified/<category>', methods=['GET'])
 def faqs_filter_verified(category):
