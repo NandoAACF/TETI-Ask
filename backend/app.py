@@ -101,7 +101,7 @@ def update_document(id):
     
 @app.route('/api/documents/categories', methods=['GET'])
 def get_document_categories():
-    categories = documents.distinct('category')
+    categories = col_documents.distinct('category')
     resp = dumps(categories)
     return resp
 
@@ -237,9 +237,9 @@ def update_faq(id):
     else:
         return not_found()
     
-@app.route('/api/faq/categories', methods=['GET'])
+@app.route('/api/faqs/categories', methods=['GET'])
 def get_categories():
-    categories = faqs.distinct('category')
+    categories = col_faq.distinct('category')
     resp = dumps(categories)
     return resp
     
