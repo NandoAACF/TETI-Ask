@@ -32,6 +32,16 @@ export const useGetVerifiedFaqs = () => {
     return useGetFaqs("verified");
 }
 
+export const useGetFaqCategory = () => {
+    const [category, setCategory] = useState([]);
+    useEffect(() => {
+        api.get("/faqs/categories")
+            .then((res) => setCategory(res.data))
+            .catch(console.log);
+    })
+    return { category }
+}
+
 export const postFaq = async (faq) => {
     const payload = {
         ...faq,
