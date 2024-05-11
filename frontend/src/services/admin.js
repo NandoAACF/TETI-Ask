@@ -7,13 +7,22 @@ const AdminContext = createContext();
 export const AdminProvider = ({ children }) => {
     const [loggedIn, setLoggedIn] = useState(false);
 
+    useEffect(() => {
+        const stored = localStorage.getItem("loggedIn");
+        if(stored && parseInt(stored) > new Date().getTime())
+            setLoggedIn(true)
+    })
+
     const login = async (credentials) => {
         const res = await api.post("/login", credentials);
         setLoggedIn(true);
+        const expirationTime = new Date().getTime() + 24 * 60 * 60 * 1000;
+        localStorage.setItem('loggedIn', expirationTime);
         return res;
     };
     const logout = () => {
         setLoggedIn(false);
+        localStorage.removeItem('loggedIn');
     };
 
     return <AdminContext.Provider value={{ loggedIn, login, logout }}>{children}</AdminContext.Provider>;
