@@ -20,9 +20,9 @@ if "messages" not in st.session_state.keys():
 @st.cache_resource(show_spinner=False)
 def load_data():
     with st.spinner(text="Loading and indexing DTETI Knowledge. Please wait :)"):
-        reader = SimpleDirectoryReader(input_dir="./chatbot/data", recursive=True)
+        reader = SimpleDirectoryReader(input_dir="./data", recursive=True)
         docs = reader.load_data()
-        service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-3.5-turbo", temperature=0.5, system_prompt="Kamu adalah ahli di DTETI (Depatermen Teknik Elektro dan Teknologi Informasi) Universitas Gadjah Mada. Asumsikan semua pertanyaan berkaitan dengan DTETI. Jawab pertanyaan sesuai fakta dan jangan berhalusinasi."))
+        service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-3.5-turbo", temperature=0.1, system_prompt="Kamu adalah ahli di DTETI (Depatermen Teknik Elektro dan Teknologi Informasi) Universitas Gadjah Mada. Asumsikan semua pertanyaan berkaitan dengan DTETI. Jawab pertanyaan sesuai fakta dan jangan berhalusinasi."))
         index = VectorStoreIndex.from_documents(docs, service_context=service_context)
         return index
 

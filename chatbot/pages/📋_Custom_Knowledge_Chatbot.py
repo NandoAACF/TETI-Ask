@@ -9,7 +9,7 @@ st.set_page_config(page_title="TETI Ask", page_icon="🧑‍🎓")
 
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
-st.title("🤖 Custom Knowledge Chatbot")
+st.title("📋 Custom Knowledge Chatbot")
 
 prompt_command = st.sidebar.text_area("Main Command for Chatbot 🤖", "Kamu adalah ahli di DTETI (Depatermen Teknik Elektro dan Teknologi Informasi) Universitas Gadjah Mada. Asumsikan semua pertanyaan berkaitan dengan DTETI. Jawab pertanyaan sesuai fakta dan jangan berhalusinasi.")
 
@@ -54,7 +54,7 @@ if knowledge_files is not None and prompt_command is not None:
         with st.spinner(text="Loading and Indexing Knowledge. Please wait :)"):
             reader = SimpleDirectoryReader(input_dir = "./data_knowledge", recursive=True)
             docs = reader.load_data()
-            service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-3.5-turbo", temperature=0.5, system_prompt=prompt_command))
+            service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-3.5-turbo", temperature=0.1, system_prompt=prompt_command))
             index = VectorStoreIndex.from_documents(docs, service_context=service_context)
             return index
 
