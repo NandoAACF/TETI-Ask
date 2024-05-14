@@ -99,9 +99,9 @@ def update_document(id):
     else:
         return not_found()
     
-@app.route('/api/documents/categories', methods=['GET'])
-def get_document_categories():
-    categories = col_documents.distinct('category')
+@app.route('/api/documents/categories/<status>', methods=['GET'])
+def get_document_categories(status):
+    categories = col_documents.distinct('category', {'status': status})
     resp = dumps(categories)
     return resp
 
@@ -237,9 +237,9 @@ def update_faq(id):
     else:
         return not_found()
     
-@app.route('/api/faqs/categories', methods=['GET'])
-def get_categories():
-    categories = col_faq.distinct('category')
+@app.route('/api/faqs/categories/<status>', methods=['GET'])
+def get_categories(status):
+    categories = col_faq.distinct('category', {'status': status})
     resp = dumps(categories)
     return resp
     
