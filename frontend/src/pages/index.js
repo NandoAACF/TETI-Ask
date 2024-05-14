@@ -40,7 +40,7 @@ export default function Documents() {
                 <div className="flex flex-col md:flex-row items-start md:items-center justify-start mt-[20px] gap-x-[20px] gap-y-[20px] md:gap-x-[35px] md:gap-y-[25px] md:flex-wrap">
                     <div className="flex flex-row items-center justify-start gap-[15px]">
                         <h4 className="text-[17px] font-medium text-left">Category:</h4>
-                        <SelectDocumentCategory handleCategory={handleCategory} />
+                        <SelectDocumentCategory handleCategory={handleCategory} status="verified" />
                     </div>
                     <div className="flex flex-row items-center justify-start gap-[15px]">
                         <h4 className="text-[17px] font-medium text-left">Search:</h4>

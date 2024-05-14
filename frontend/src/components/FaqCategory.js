@@ -1,7 +1,7 @@
 import { useGetFaqCategory } from "@/services/faqs"
 
-export default function SelectFaqCategory({handleCategory}){
-    const {category} = useGetFaqCategory()
+export default function SelectFaqCategory({handleCategory, status}){
+    const {category} = useGetFaqCategory(status)
     return (
         <select
             onChange={handleCategory}

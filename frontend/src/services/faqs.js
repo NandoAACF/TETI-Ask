@@ -35,10 +35,10 @@ export const useGetVerifiedFaqs = () => {
     return useGetFaqs("verified");
 }
 
-export const useGetFaqCategory = () => {
+export const useGetFaqCategory = (status) => {
     const [category, setCategory] = useState([]);
     useEffect(() => {
-        api.get("/faqs/categories")
+        api.get(`/faqs/categories/${status}`)
             .then((res) => setCategory(res.data))
             .catch(console.log);
     })

@@ -1,7 +1,7 @@
 import { useGetDocumentCategory } from "@/services/document"
 
-export default function SelectDocumentCategory({handleCategory}){
-    const {category} = useGetDocumentCategory()
+export default function SelectDocumentCategory({handleCategory, status}){
+    const {category} = useGetDocumentCategory(status)
     return (
         <select
             onChange={handleCategory}
