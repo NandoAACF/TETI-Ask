@@ -7,6 +7,7 @@ export const useGetDocument = (status = "verified") => {
     const [search, setSearch] = useState("");
     const {onRefetch, refetch} = useRefetch();
     const [loading, setLoading] = useState(true);
+    const [categories, setCategories] = useState([]);
 
     useEffect(() => {
         setLoading(true);
@@ -18,13 +19,19 @@ export const useGetDocument = (status = "verified") => {
             .catch(console.log)
             .finally(() => setLoading(false));
     }, [onRefetch, category]);
+        
+    useEffect(() => {
+        api.get(`/documents/categories/${status}`)
+            .then((res) => setCategories(res.data))
+            .catch(console.log);
+    }, [onRefetch])
 
     const data = !search ? docs : docs.filter(doc => 
         doc.title.toLowerCase().includes(search.toLowerCase()) ||
         doc.description.toLowerCase().includes(search.toLowerCase()) 
     );
 
-    return { data, refetch, setCategory, setSearch, loading };
+    return { data, refetch, setCategory, setSearch, loading, categories };
 };
 
 export const useGetUnverifiedDocument = () => {

@@ -30,7 +30,7 @@ export default function AdminDashboad() {
                 <div className="flex flex-col md:flex-row items-start md:items-center justify-start mt-[20px] gap-x-[20px] gap-y-[20px] md:gap-x-[35px] md:gap-y-[25px] md:flex-wrap">
                     <div className="flex flex-row items-center justify-start gap-[15px]">
                         <h4 className="text-[17px] font-medium text-left">Category:</h4>
-                        <SelectDocumentCategory handleCategory={handleCategory} status="unverified" />
+                        <SelectDocumentCategory categories={docs.categories} handleCategory={handleCategory} />
                     </div>
                     <Link
                         className="px-[20px] py-[5px] rounded-lg bg-red-600 text-white hover:bg-red-700 active:bg-red-800 transition-all ease-in-out duration-300 text-center font-semibold hover:shadow-lg hover:shadow-red-700/[29%]"
