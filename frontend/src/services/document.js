@@ -42,16 +42,6 @@ export const useGetVerifiedDocument = () => {
     return useGetDocument("verified");
 }
 
-export const useGetDocumentCategory = (status = "verified") => {
-    const [category, setCategory] = useState([]);
-    useEffect(() => {
-        api.get(`/documents/categories/${status}`)
-            .then((res) => setCategory(res.data))
-            .catch(console.log);
-    })
-    return { category }
-}
-
 export const postDocument = async (document) => {
     const payload = {
         ...document,

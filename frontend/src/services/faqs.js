@@ -7,6 +7,7 @@ export const useGetFaqs = (status = "verified") => {
     const [search, setSearch] = useState("");
     const {onRefetch, refetch} = useRefetch();
     const [loading, setLoading] = useState(true);
+    const [categories, setCategories] = useState([]);
 
     useEffect(() => {
         setLoading(true);
@@ -18,13 +19,19 @@ export const useGetFaqs = (status = "verified") => {
             .catch(console.log)
             .finally(() => setLoading(false));
     }, [category, onRefetch]);
+    
+    useEffect(() => {
+        api.get(`/faqs/categories/${status}`)
+            .then((res) => setCategories(res.data))
+            .catch(console.log);
+    }, [onRefetch])
 
     const data = !search ? faqs : faqs.filter(faq => 
         faq.question.toLowerCase().includes(search.toLowerCase()) ||
         faq.answer.toLowerCase().includes(search.toLowerCase()) 
     );
 
-    return { data, refetch, setCategory, setSearch, loading };
+    return { data, refetch, setCategory, setSearch, loading, categories };
 };
 
 export const useGetUnverifiedFaqs = () => {
