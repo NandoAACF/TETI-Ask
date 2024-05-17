@@ -63,7 +63,12 @@ export default function FAQ() {
                         Apply
                     </a> */}
                 </div>
-                <img className={`mx-auto mt-8 ${!faqs.loading && 'hidden'}`} src="/assets/images/loading.gif" alt="loading" width={80} />
+                <img
+                    className={`mx-auto mt-8 ${!faqs.loading && "hidden"}`}
+                    src="/assets/images/loading.gif"
+                    alt="loading"
+                    width={80}
+                />
                 <div className="flex flex-col items-start justify-start mt-[30px] gap-[20px] relative">
                     {faqs.data.map((faq, index) => (
                         <FAQItem
@@ -90,14 +95,16 @@ export default function FAQ() {
                     /> */}
                 </div>
             </div>
-            <div
-                className="fixed right-[50px] bottom-[40px] text-[60px] sm:text-[90px] text-black hover:text-orange-700 active:text-orange-800 transition-all ease-in-out duration-200 cursor-pointer hover:scale-110"
-                onClick={() => {
-                    setModal(true);
-                }}
-            >
-                <RiAddCircleFill />
-            </div>
+            {admin.loggedIn && (
+                <div
+                    className="fixed right-[50px] bottom-[40px] text-[60px] sm:text-[90px] text-black hover:text-orange-700 active:text-orange-800 transition-all ease-in-out duration-200 cursor-pointer hover:scale-110"
+                    onClick={() => {
+                        setModal(true);
+                    }}
+                >
+                    <RiAddCircleFill />
+                </div>
+            )}
             {modal && <ModalFAQ handleExit={handleExit} />}
             {faqs.data.length && editIdx != null && (
                 <ModalEditFAQ handleExit={handleExitEdit} _faq={faqs.data[editIdx]} refetch={faqs.refetch} />

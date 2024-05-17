@@ -97,14 +97,16 @@ export default function Documents() {
                     /> */}
                 </div>
             </div>
-            <div
-                className="fixed right-[50px] bottom-[40px] text-[60px] sm:text-[90px] text-black hover:text-red-700 active:text-red-800 transition-all ease-in-out duration-200 cursor-pointer hover:scale-110"
-                onClick={() => {
-                    setModal(true);
-                }}
-            >
-                <RiAddCircleFill />
-            </div>
+            {admin.loggedIn && (
+                <div
+                    className="fixed right-[50px] bottom-[40px] text-[60px] sm:text-[90px] text-black hover:text-red-700 active:text-red-800 transition-all ease-in-out duration-200 cursor-pointer hover:scale-110"
+                    onClick={() => {
+                        setModal(true);
+                    }}
+                >
+                    <RiAddCircleFill />
+                </div>
+            )}
             {modal && <ModalDocument handleExit={handleExit} />}
             {docs.data.length && editIdx != null && (
                 <ModalEditDocument handleExit={handleExitEdit} _document={docs.data[editIdx]} refetch={docs.refetch} />
