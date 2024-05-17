@@ -33,7 +33,10 @@ def add_document():
 
     if _title and _description and _link and _date and request.method == 'POST':
         col_documents.insert_one({'title': _title, 'description': _description, 'link': _link,'category':_category, 'status':_status, 'date': _date})
-        resp = jsonify('Document added successfully!')
+        if _status == 'unverified':
+            resp = jsonify('Document sent to admin!')
+        else:
+            resp = jsonify('Document added successfully!')
         resp.status_code = 200
         return resp
     else:
@@ -172,7 +175,10 @@ def add_faq():
 
     if _question and _answer and request.method == 'POST':
         col_faq.insert_one({'question': _question, 'answer': _answer, 'category': _category, 'status': _status})
-        resp = jsonify('FAQ added successfully!')
+        if _status == 'unverified':
+            resp = jsonify('FAQ sent to admin!')
+        else:
+            resp = jsonify('FAQ added successfully!')
         resp.status_code = 200
         return resp
     else:
