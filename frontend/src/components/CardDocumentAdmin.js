@@ -29,7 +29,7 @@ export default function CardDocumentAdmin({
         }
     };
     return (
-        <div className="flex flex-col items-center justify-between w-[259px] sm:w-[279px] sm:h-[290px] pb-[20px] bg-white rounded-[10px] shadow-md relative">
+        <div className="flex flex-col items-center justify-between w-full sm:w-[279px] sm:h-[290px] pb-[20px] bg-white rounded-[10px] shadow-md relative">
             <div className="flex flex-col items-start justify-between w-full h-full">
                 <div className="flex flex-col items-start justify-start w-full">
                     <div className="w-full h-[30px] rounded-t-[10px] bg-red-600"></div>

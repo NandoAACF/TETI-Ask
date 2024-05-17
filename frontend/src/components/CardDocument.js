@@ -25,7 +25,7 @@ export default function CardDocument({
     return (
         <div
             className={clsx(
-                "flex flex-col items-center justify-between w-[259px] sm:w-[279px] pb-[20px] bg-white rounded-[10px] shadow-md relative",
+                "flex flex-col items-center justify-between w-full sm:w-[279px] pb-[20px] bg-white rounded-[10px] shadow-md relative",
                 loggedIn ? "sm:h-[333px]" : "sm:h-[240px]"
             )}
         >

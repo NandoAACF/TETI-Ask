@@ -35,7 +35,7 @@ export default function Documents() {
                 <title>Documents - TETI Ask</title>
             </Head>
             <Sidebar activeIcon="documents" />
-            <div className="flex flex-col justify-start min-h-screen bg-slate-50 pt-[80px] sm:pt-[30px] pb-[30px] pr-[27px] sm:pr-[50px] pl-[40px] sm:pl-[153px] body">
+            <div className="flex flex-col justify-start min-h-screen bg-slate-50 pt-[80px] sm:pt-[30px] pb-[30px] pr-[40px] sm:pr-[50px] pl-[40px] sm:pl-[153px] body">
                 <h3 className="text-[40px] font-bold text-left">Documents</h3>
                 <div className="flex flex-col md:flex-row items-start md:items-center justify-start mt-[20px] gap-x-[20px] gap-y-[20px] md:gap-x-[35px] md:gap-y-[25px] md:flex-wrap">
                     <div className="flex flex-row items-center justify-start gap-[15px]">
@@ -60,7 +60,12 @@ export default function Documents() {
                         Apply
                     </a> */}
                 </div>
-                <img className={`mx-auto mt-8 ${!docs.loading && 'hidden'}`} src="/assets/images/loading.gif" alt="loading" width={80} />
+                <img
+                    className={`mx-auto mt-8 ${!docs.loading && "hidden"}`}
+                    src="/assets/images/loading.gif"
+                    alt="loading"
+                    width={80}
+                />
                 <div className="flex flex-row items-center justify-start mt-[30px] flex-wrap gap-[40px]">
                     {docs.data.map((doc, index) => (
                         <CardDocument
