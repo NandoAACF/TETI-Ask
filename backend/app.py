@@ -157,11 +157,11 @@ def login_admin():
             resp.status_code = 200
             return resp
         else:
-            resp = jsonify('Invalid password!')
+            resp = jsonify('Invalid email or password!')
             resp.status_code = 400
             return resp
     else:
-        resp = jsonify('Invalid email!')
+        resp = jsonify('Invalid email or password!')
         resp.status_code = 400
         return resp
     
