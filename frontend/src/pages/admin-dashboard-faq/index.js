@@ -23,6 +23,9 @@ export default function AdminDashboardFAQ() {
     const handleCategory = (e) => {
         faqs.setCategory(e.target.value);
     };
+    const handleSearch = (e) => {
+        faqs.setSearch(e.target.value);
+    };
     return (
         <>
             <Head>
@@ -39,6 +42,7 @@ export default function AdminDashboardFAQ() {
                     <div className="flex flex-row items-center justify-start gap-[15px]">
                         <h4 className="text-[17px] font-medium text-left">Search:</h4>
                         <input
+                            onChange={handleSearch}
                             type="text"
                             placeholder="Keyword"
                             className="border-[1px] border-slate-300 rounded-[10px] w-[145px] sm:w-[200px] py-[5px] px-[9px] mt-[2px] hover:bg-white outline-none transition-all ease-in-out duration-300 focus:ring-[3px] focus:ring-orange-500"
@@ -59,7 +63,12 @@ export default function AdminDashboardFAQ() {
                         Apply
                     </a> */}
                 </div>
-                <img className={`mx-auto mt-8 ${!faqs.loading && 'hidden'}`} src="/assets/images/loading.gif" alt="loading" width={80} />
+                <img
+                    className={`mx-auto mt-8 ${!faqs.loading && "hidden"}`}
+                    src="/assets/images/loading.gif"
+                    alt="loading"
+                    width={80}
+                />
                 <div className="flex flex-col items-start justify-start mt-[30px] gap-[20px] relative">
                     {faqs.data.map((faq) => (
                         <FAQItemAdmin
