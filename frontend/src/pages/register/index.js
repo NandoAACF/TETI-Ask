@@ -37,7 +37,7 @@ export default function Register() {
         <div className="portal-background">
           {/* Add an engaging background image or animation here */}
         </div>
-        <div className="portal-overlay flex flex-col items-center justify-center min-h-screen">
+        <div className="portal-overlay flex flex-col items-center justify-center min-h-screen relative">
           <img
             src="/assets/images/Login/logo_teti_ask_transparent.png" // Use transparent logo
             alt="TETI Ask Logo"
@@ -73,6 +73,10 @@ export default function Register() {
               Login Here
             </span>
           </h3>
+
+          {/* Added Ornamentation Elements */}
+          <div className="portal-ornament top-0 left-0 w-full h-[100px] bg-gradient-to-r from-[#c92929] to-[#b83636] to-[#540b0b] opacity-20 absolute"></div>
+          <div className="portal-ornament bottom-0 right-0 w-full h-[100px] bg-gradient-to-l from-[#c92929] to-[#b83636] to-[#540b0b] opacity-20 absolute"></div>
         </div>
       </div>
     </>
