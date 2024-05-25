@@ -31,38 +31,41 @@ export default function Register() {
   return (
     <>
       <Head>
-        <title>Join the TETI Ask Family - Admin Registration</title>
+        <title>Unlock Your Admin Powers at TETI Ask!</title>
       </Head>
-      <div className="registration-container">
-        <div className="hero">
-          <img
-            src="/assets/images/Login/logo_teti_ask_white.png" // Use white logo for contrast
-            alt="TETI Ask Logo"
-            className="hero-logo"
-          />
-          <h1 className="hero-title">
-            Unlock Your Admin Powers at TETI Ask
-          </h1>
+      <div className="registration-portal">
+        <div className="portal-background">
+          {/* Add an engaging background image or animation here */}
         </div>
-        <div className="form-container">
+        <div className="portal-overlay">
+          <img
+            src="/assets/images/Login/logo_teti_ask_transparent.png" // Use transparent logo
+            alt="TETI Ask Logo"
+            className="portal-logo"
+          />
+          <h1 className="portal-title">Level Up to TETI Ask Admin</h1>
           <form onSubmit={handleRegister}>
-            <Input label="Name" type="text" className="w-full" name="name" error="nameError" />
-            <Input label="Email" type="email" className="w-full" name="email" error="emailError" />
-            <Input
-              label="Password"
-              type="password"
-              className="w-full"
-              name="password"
-              error="passwordError"
-            />
-            <Input
-              label="Confirm Password"
-              type="password"
-              className="w-full"
-              name="confirmPassword"
-              error="passwordError"
-            />
-            <Button text="Become an Admin" type="login" size="md" className="w-full mt-[30px] lg:mt-[40px]" />
+            <div className="input-group">
+              <Input label="Name" type="text" className="w-full" name="name" error="nameError" />
+              <Input label="Email" type="email" className="w-full" name="email" error="emailError" />
+            </div>
+            <div className="input-group">
+              <Input
+                label="Password"
+                type="password"
+                className="w-full"
+                name="password"
+                error="passwordError"
+              />
+              <Input
+                label="Confirm Password"
+                type="password"
+                className="w-full"
+                name="confirmPassword"
+                error="passwordError"
+              />
+            </div>
+            <Button text="Join the Admin Force" type="login" size="md" className="w-full mt-[30px] lg:mt-[40px]" />
           </form>
           <h3 className="login-link">
             Already a TETI Ask Hero?{" "}
