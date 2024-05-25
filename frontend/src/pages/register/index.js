@@ -37,19 +37,19 @@ export default function Register() {
         <div className="portal-background">
           {/* Add an engaging background image or animation here */}
         </div>
-        <div className="portal-overlay">
+        <div className="portal-overlay flex flex-col items-center justify-center min-h-screen">
           <img
             src="/assets/images/Login/logo_teti_ask_transparent.png" // Use transparent logo
             alt="TETI Ask Logo"
-            className="portal-logo"
+            className="portal-logo max-w-[200px] md:max-w-[300px] lg:max-w-[340px]"
           />
-          <h1 className="portal-title">Level Up to TETI Ask Admin</h1>
-          <form onSubmit={handleRegister}>
-            <div className="input-group">
+          <h1 className="portal-title text-center max-w-[600px] md:text-[48px] lg:text-[50px]">
+            Level Up to TETI Ask Admin
+          </h1>
+          <form onSubmit={handleRegister} className="flex flex-col items-center justify-center w-full md:w-3/4 lg:w-1/2">
+            <div className="input-group flex flex-col gap-4 w-full md:w-3/4 lg:w-2/3">
               <Input label="Name" type="text" className="w-full" name="name" error="nameError" />
               <Input label="Email" type="email" className="w-full" name="email" error="emailError" />
-            </div>
-            <div className="input-group">
               <Input
                 label="Password"
                 type="password"
@@ -67,7 +67,7 @@ export default function Register() {
             </div>
             <Button text="Join the Admin Force" type="login" size="md" className="w-full mt-[30px] lg:mt-[40px]" />
           </form>
-          <h3 className="login-link">
+          <h3 className="login-link text-center mt-[30px] mx-[20px] sm:mx-0">
             Already a TETI Ask Hero?{" "}
             <span onClick={() => router.push("/login")} className="text-link underline cursor-pointer">
               Login Here
