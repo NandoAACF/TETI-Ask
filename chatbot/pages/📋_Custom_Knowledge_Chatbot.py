@@ -15,6 +15,9 @@ prompt_command = st.sidebar.text_area("Main Command for Chatbot 🤖", "Kamu ada
 
 knowledge_files = st.sidebar.file_uploader("Upload knowledges file 📋", type=["pdf"], accept_multiple_files=True)
 
+with st.sidebar:
+    st.link_button("🖥️ Go to TETI Ask Web", "https://teti-ask.vercel.app/")
+
 delete_chat = st.sidebar.button("🚮 Delete Chat History")
 
 # Jika tidak ada knowledge file atau tombol delete chat ditekan, maka hapus cache dan session pengguna

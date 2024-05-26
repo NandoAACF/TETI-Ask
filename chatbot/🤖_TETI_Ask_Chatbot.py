@@ -10,6 +10,9 @@ openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 st.title("🤖 TETI Ask")
 
+with st.sidebar:
+    st.link_button("🖥️ Go to TETI Ask Web", "https://teti-ask.vercel.app/")
+
 # Membuat chat history baru jika belum ada
 if "messages" not in st.session_state.keys(): 
     st.session_state.messages = [
